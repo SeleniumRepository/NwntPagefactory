@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NWNThealthcare">
+	<test name = "NwntTest">
+		<classes>
+			<class name = "com.nwnt.qa.testcases.LoginPageTest"/>
+		</classes>
+	</test>
+</suite>
