@@ -8,11 +8,14 @@ import org.testng.annotations.Test;
 import com.nwnt.qa.base.Testbase;
 import com.nwnt.qa.pages.HomePage;
 import com.nwnt.qa.pages.LoginPage;
+import com.nwnt.qa.util.CaptureScreen;
 
 public class LoginPageTest extends Testbase
 {
 	LoginPage loginPage;
 	HomePage homePage;
+	
+	CaptureScreen captureScreen;
 	
 	public LoginPageTest() throws Throwable 
 	{
@@ -31,17 +34,19 @@ public class LoginPageTest extends Testbase
 	}
 	
 	@Test
-	public void loginPageTitleTest()
+	public void loginPageTitleTest() throws InterruptedException
 	{
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Login");
 	}
 	
 	@Test
-	public void loginTest()
+	public void loginTest() throws Throwable
 	{
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		//captureScreen.takeScreenSnap();
 	}
+	
 	@AfterMethod
 	public void tearDown()
 	{

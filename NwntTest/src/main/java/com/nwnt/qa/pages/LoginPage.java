@@ -18,10 +18,11 @@ public class LoginPage extends Testbase
 	WebElement loginBtn;
 	
 	@FindBy(id="HyperLink1")
-	WebElement forgotPwdLnk;
+	WebElement forgotPwd_Lnk;
 	
-	@FindBy(xpath="//div[@class='login-logo']//a[@href='Default.aspx']//img[@alt='NWNT']")
-	WebElement imgLogoLnk;
+	//@FindBy(xpath="//div[@class='login-logo']//a[@href='Default.aspx']//img[@alt='NWNT']")
+	@FindBy(xpath="//img[(@alt='NWNT')]//ancestor::div[@class='login-logo']")
+	WebElement logoImg_Lnk;
 	
 	//initializing the page objects
 	public LoginPage() throws Throwable 
@@ -35,13 +36,24 @@ public class LoginPage extends Testbase
 		return driver.getTitle();
 	}
 	
-	public HomePage login(String un, String pwd)
+	public HomePage login(String un, String pwd) throws Throwable
 	{
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginBtn.click();
 		
 		return new HomePage();
+	}
+	
+	public boolean verifyLogoImage()
+	{
+		return logoImg_Lnk.isDisplayed();
+	}
+	
+	public ForgotPasswordPage forgotPassword()
+	{
+		forgotPwd_Lnk.click();
+		return new ForgotPasswordPage();
 	}
 
 }

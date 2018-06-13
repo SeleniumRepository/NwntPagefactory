@@ -5,9 +5,9 @@
     <classes>
       <class name="com.nwnt.qa.testcases.LoginPageTest">
         <methods>
+          <include name="tearDown"/>
           <include name="loginTest"/>
           <include name="setup"/>
-          <include name="loginPageTitleTest"/>
         </methods>
       </class> <!-- com.nwnt.qa.testcases.LoginPageTest -->
     </classes>

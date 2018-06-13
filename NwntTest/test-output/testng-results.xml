@@ -1,83 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="2" failed="0" total="2" passed="0">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="104" started-at="2018-05-23T12:38:33Z" finished-at="2018-05-23T12:38:33Z">
+  <suite name="Default suite" duration-ms="16258" started-at="2018-06-13T07:37:58Z" finished-at="2018-06-13T07:38:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="104" started-at="2018-05-23T12:38:33Z" finished-at="2018-05-23T12:38:33Z">
+    <test name="Default test" duration-ms="16258" started-at="2018-06-13T07:37:58Z" finished-at="2018-06-13T07:38:14Z">
       <class name="com.nwnt.qa.testcases.LoginPageTest">
-        <test-method status="FAIL" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="setup" is-config="true" duration-ms="0" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
-          <exception class="java.lang.NoClassDefFoundError">
-            <message>
-              <![CDATA[org/apache/http/auth/Credentials]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NoClassDefFoundError: org/apache/http/auth/Credentials
-	at org.openqa.selenium.remote.HttpCommandExecutor.getDefaultClientFactory(HttpCommandExecutor.java:93)
-	at org.openqa.selenium.remote.HttpCommandExecutor.<init>(HttpCommandExecutor.java:72)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.<init>(DriverCommandExecutor.java:63)
-	at org.openqa.selenium.chrome.ChromeDriverCommandExecutor.<init>(ChromeDriverCommandExecutor.java:36)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
-	at com.nwnt.qa.base.Testbase.initialization(Testbase.java:38)
-	at com.nwnt.qa.testcases.LoginPageTest.setup(LoginPageTest.java:25)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: java.lang.ClassNotFoundException: org.apache.http.auth.Credentials
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	... 35 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NoClassDefFoundError -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="setup" is-config="true" duration-ms="7378" started-at="2018-06-13T13:07:58Z" finished-at="2018-06-13T13:08:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="SKIP" signature="loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="loginPageTitleTest" duration-ms="2" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="loginPageTitleTest" duration-ms="21" started-at="2018-06-13T13:08:05Z" finished-at="2018-06-13T13:08:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTitleTest -->
-        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="tearDown" is-config="true" duration-ms="825" started-at="2018-06-13T13:08:05Z" finished-at="2018-06-13T13:08:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="SKIP" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="setup" is-config="true" duration-ms="0" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="setup" is-config="true" duration-ms="5026" started-at="2018-06-13T13:08:06Z" finished-at="2018-06-13T13:08:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="SKIP" signature="loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="loginTest" duration-ms="1" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="loginTest" duration-ms="2000" started-at="2018-06-13T13:08:11Z" finished-at="2018-06-13T13:08:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@7823a2f9]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-05-23T18:08:33Z" finished-at="2018-05-23T18:08:33Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="tearDown" is-config="true" duration-ms="990" started-at="2018-06-13T13:08:13Z" finished-at="2018-06-13T13:08:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
