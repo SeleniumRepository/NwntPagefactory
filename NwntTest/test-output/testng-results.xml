@@ -1,37 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16258" started-at="2018-06-13T07:37:58Z" finished-at="2018-06-13T07:38:14Z">
+  <suite name="Default suite" duration-ms="40967" started-at="2018-06-15T08:34:49Z" finished-at="2018-06-15T08:35:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16258" started-at="2018-06-13T07:37:58Z" finished-at="2018-06-13T07:38:14Z">
-      <class name="com.nwnt.qa.testcases.LoginPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="setup" is-config="true" duration-ms="7378" started-at="2018-06-13T13:07:58Z" finished-at="2018-06-13T13:08:05Z">
+    <test name="Default test" duration-ms="40967" started-at="2018-06-15T08:34:49Z" finished-at="2018-06-15T08:35:30Z">
+      <class name="com.nwnt.qa.testcases.HomePageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="setup" is-config="true" duration-ms="8575" started-at="2018-06-15T14:04:49Z" finished-at="2018-06-15T14:04:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="loginPageTitleTest" duration-ms="21" started-at="2018-06-13T13:08:05Z" finished-at="2018-06-13T13:08:05Z">
+        <test-method status="PASS" signature="homePageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="homePageTitleTest" duration-ms="20" started-at="2018-06-15T14:04:58Z" finished-at="2018-06-15T14:04:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginPageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="tearDown" is-config="true" duration-ms="825" started-at="2018-06-13T13:08:05Z" finished-at="2018-06-13T13:08:06Z">
+        </test-method> <!-- homePageTitleTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="teardown" is-config="true" duration-ms="894" started-at="2018-06-15T14:04:58Z" finished-at="2018-06-15T14:04:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="setup" is-config="true" duration-ms="5026" started-at="2018-06-13T13:08:06Z" finished-at="2018-06-13T13:08:11Z">
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="setup" is-config="true" duration-ms="7380" started-at="2018-06-15T14:04:59Z" finished-at="2018-06-15T14:05:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="loginTest" duration-ms="2000" started-at="2018-06-13T13:08:11Z" finished-at="2018-06-13T13:08:13Z">
+        <test-method status="PASS" signature="clickAppointmentTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="clickAppointmentTest" duration-ms="246" started-at="2018-06-15T14:05:06Z" finished-at="2018-06-15T14:05:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@62ee68d8]" name="tearDown" is-config="true" duration-ms="990" started-at="2018-06-13T13:08:13Z" finished-at="2018-06-13T13:08:14Z">
+        </test-method> <!-- clickAppointmentTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="teardown" is-config="true" duration-ms="1058" started-at="2018-06-15T14:05:06Z" finished-at="2018-06-15T14:05:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.nwnt.qa.testcases.LoginPageTest -->
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="setup" is-config="true" duration-ms="6239" started-at="2018-06-15T14:05:07Z" finished-at="2018-06-15T14:05:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="clickChangePasswordTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="clickChangePasswordTest" duration-ms="248" started-at="2018-06-15T14:05:14Z" finished-at="2018-06-15T14:05:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickChangePasswordTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="teardown" is-config="true" duration-ms="1044" started-at="2018-06-15T14:05:14Z" finished-at="2018-06-15T14:05:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="setup" is-config="true" duration-ms="6213" started-at="2018-06-15T14:05:15Z" finished-at="2018-06-15T14:05:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="clickAppointmentsTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="clickAppointmentsTest" duration-ms="237" started-at="2018-06-15T14:05:21Z" finished-at="2018-06-15T14:05:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAppointmentsTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="teardown" is-config="true" duration-ms="970" started-at="2018-06-15T14:05:21Z" finished-at="2018-06-15T14:05:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="setup" is-config="true" duration-ms="6630" started-at="2018-06-15T14:05:22Z" finished-at="2018-06-15T14:05:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="clickLogoutTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="clickLogoutTest" duration-ms="235" started-at="2018-06-15T14:05:29Z" finished-at="2018-06-15T14:05:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickLogoutTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@62ee68d8]" name="teardown" is-config="true" duration-ms="958" started-at="2018-06-15T14:05:29Z" finished-at="2018-06-15T14:05:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

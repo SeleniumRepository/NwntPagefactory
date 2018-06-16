@@ -48,13 +48,16 @@ public class HomePage extends Testbase
 	@FindBy(xpath="//div[@class='btmmnus']//td")
 	WebElement lbl_copyrightText;
 	
+	@FindBy(xpath="//a//parent::td//ancestor::tr[@class='tbl-footer']")
+	WebElement btn_pageNo;
+	
 	
 	public HomePage() throws Throwable
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public String validateLoginpage()
+	public String validateHomePageTitle()
 	{
 		return driver.getTitle();
 	}
@@ -66,21 +69,21 @@ public class HomePage extends Testbase
 	} 
 	
 	//to access the Your profile page
-	public YourProfilePage clickYourProfile()
+	public YourProfilePage clickYourProfile() throws Throwable
 	{
 		menu_yourProfile.click();
 		return new YourProfilePage();
 	}
 	
 	//to access the Change Password page
-	public ChangePasswordPage clickChangePassword()
+	public ChangePasswordPage clickChangePassword() throws Throwable
 	{
 		menu_changePassword.click();
 		return new ChangePasswordPage();
 	}
 	
 	//to access the Appointments page
-	public AppointmentPage clickAppointment()
+	public AppointmentPage clickAppointment() throws Throwable
 	{
 		menu_appointments.click();
 		return new AppointmentPage();
@@ -93,7 +96,7 @@ public class HomePage extends Testbase
 		return new LoginPage();
 	}
 	
-	public void checkVisitorProfile()
+	public void checkVisitorProfile(String visitorName)
 	{
 		//id='ctl00_CenterAreaHolder_GridUsers_ctl04_hlnkFullName'
 		String before_xpath="//[@id='ctl00_CenterAreaHolder_GridUsers_ct";
@@ -101,7 +104,7 @@ public class HomePage extends Testbase
 		for(int i=102; i>=116; i++)
 		{
 			String name = driver.findElement(By.xpath(before_xpath+i+after_xpath)).getText();
-			if(name.contains("Test"))
+			if(name.contains(visitorName))
 			{
 				driver.findElement(By.xpath(before_xpath+i+after_xpath)).click();
 				break;
