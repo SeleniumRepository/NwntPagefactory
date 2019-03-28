@@ -36,10 +36,11 @@ public class LoginPage extends Testbase
 		return driver.getTitle();
 	}
 	
-	public HomePage login(String un, String pwd) throws Throwable
+	//public HomePage login(String un, String pwd) throws Throwable
+	public HomePage login() throws Throwable
 	{
-		username.sendKeys(un);
-		password.sendKeys(pwd);
+		username.sendKeys(prop.getProperty("username"));
+		password.sendKeys(prop.getProperty("password"));
 		loginBtn.click();
 		
 		return new HomePage();

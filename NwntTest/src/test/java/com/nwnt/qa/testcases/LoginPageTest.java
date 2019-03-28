@@ -15,7 +15,7 @@ public class LoginPageTest extends Testbase
 	LoginPage loginPage;
 	HomePage homePage;
 	
-	CaptureScreen captureScreen;
+	CaptureScreen captureScreen = new CaptureScreen();
 	
 	public LoginPageTest() throws Throwable 
 	{
@@ -43,8 +43,9 @@ public class LoginPageTest extends Testbase
 	@Test
 	public void loginTest() throws Throwable
 	{
-		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		//captureScreen.takeScreenSnap();
+		//homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homePage = loginPage.login();
+		captureScreen.takeScreenSnap();
 	}
 	
 	@AfterMethod
