@@ -91,7 +91,7 @@ public class HomePage extends Testbase
 	}
 
 	//**Actions**
-	public String validateHomePageTitle()
+	public String validatePageTitle()
 	{
 		return driver.getTitle();
 	}
@@ -334,7 +334,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Assign Appointment" Button
-	public void clickBtnAssignAppointment()
+	public AssignAppointmentPage clickBtnAssignAppointment() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -365,10 +365,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new AssignAppointmentPage();
 	}
 	
 	//Click "Stress-o-meter Test" Button
-	public void clickBtnSOMtest()
+	public UserSOMDetailPage clickBtnSOMtest()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -401,10 +402,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new UserSOMDetailPage();
 	}
 	
 	//Click "Advance Payment" Button
-	public void clickBtnAdvancePayments()
+	public AdvancePaymentsPage clickBtnAdvancePayments()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -435,10 +437,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new AdvancePaymentsPage();
 	}
 	
 	//Click "Print Prescriptions" Button
-	public void clickBtnPrintPrescriptions()
+	public PrintPrescriptionsPage clickBtnPrintPrescriptions()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -469,10 +472,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new PrintPrescriptionsPage();
 	}
 	
 	//Click "Print Previous Receipts" Button
-	public void clickBtnPrintPreviousReceipts()
+	public PrintPreviousReceiptsPage clickBtnPrintPreviousReceipts()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -503,10 +507,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new PrintPreviousReceiptsPage();
 	}
 	
 	//Click "View Open Appointments" Button
-	public void clickBtnViewOpenAppointments()
+	public ViewOpenAppointmentsPage clickBtnViewOpenAppointments()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -537,10 +542,11 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new ViewOpenAppointmentsPage();
 	}
 	
 	//Click "Upload Prescriptions" Button
-	public void clickBtnUploadPrescriptions()
+	public UploadPrescriptionsPage clickBtnUploadPrescriptions()
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -571,6 +577,7 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
+		return new UploadPrescriptionsPage();
 	}
 	
 }

@@ -48,7 +48,7 @@ public class HomePageTest extends Testbase
 	@Test(priority=1)
 	public void homePageTitleTest() throws IOException
 	{
-		String title = homePage.validateHomePageTitle();
+		String title = homePage.validatePageTitle();
  		Assert.assertEquals(title, "No Worry No Tension-Users", "Page Title didn't matched.");
 	}
 	
