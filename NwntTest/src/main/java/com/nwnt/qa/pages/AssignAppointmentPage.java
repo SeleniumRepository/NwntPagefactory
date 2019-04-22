@@ -1,8 +1,13 @@
 package com.nwnt.qa.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.nwnt.qa.base.Testbase;
 
@@ -34,19 +39,17 @@ public class AssignAppointmentPage extends Testbase {
 
 	// to locate the radio button list "Appointment with"
 	@FindBy(xpath = "//table[@id = 'ctl00_CenterAreaHolder_RDLAppointmentWith']//input")
-	WebElement AppointmentWith_rbl;
+	List<WebElement> AppointmentWith_rbl;
 
 	// to locate the radio button list "Clinic location"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblClinicLocation']//input")
-	WebElement ClinicLocation_rbl;
+	List<WebElement> ClinicLocation_rbl;
 
+	// ********Elements present for Doctor Appointment*********
 	// to locate the Dropdown list(Doctor) "Appointment to"
-	@FindBy(id = "ctl00_CenterAreaHolder_DDLAppointedDoctor")
-	WebElement AppointmentTo_DDLAppointedDoctor;
-
-	// to locate the Dropdown list(Panel) "Appointment to"
-	@FindBy(id = "ctl00_CenterAreaHolder_DDLPanel")
-	WebElement AppointmentTo_DDLPanel;
+	@FindBy(xpath="//select[@id='ctl00_CenterAreaHolder_DDLAppointedDoctor']//option") // (xpath="//select[@id='ctl00_CenterAreaHolder_DDLAppointedDoctor']//option")
+	//WebElement AppointmentTo_DDLDoctor;
+	List<WebElement> AppointmentTo_DDLDoctor;
 
 	// to locate the input box(Doctor) "Appointment Date"
 	@FindBy(id = "ctl00_CenterAreaHolder_ImgCalenderDoctor")
@@ -74,15 +77,19 @@ public class AssignAppointmentPage extends Testbase {
 
 	// to locate the radio button list "Case Type"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblCaseType']//input[@type='radio']")
-	WebElement CaseType_rbl;
+	List<WebElement> CaseType_rbl;
 
 	// to locate the radio button list "Appointment In"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_RadioButtonAppointmentIn']//input[@type='radio']")
-	WebElement AppointmentIn_rblDoctor;
+	List<WebElement> AppointmentIn_rblDoctor;
 
 	// to locate the check Box "Patient not brought"
 	@FindBy(id = "ctl00_CenterAreaHolder_PatientNotBrought")
 	WebElement PatientNotBrought_cb;
+
+	// to locate the check Box "Is Corporate Appointment"
+	@FindBy(xpath = "//input[@id = 'ctl00_CenterAreaHolder_IsDrAppforCorporate']")
+	WebElement IsDrAppforCorporate;
 
 	// to locate the button "Submit"
 	@FindBy(id = "ctl00_CenterAreaHolder_Submitbtn")
@@ -93,6 +100,10 @@ public class AssignAppointmentPage extends Testbase {
 	WebElement AllAppointments_Grd;
 
 	// ********Elements present for Panel Appointment*********
+	// to locate the Dropdown list(Panel) "Appointment to"
+	@FindBy(xpath = "//select[@id='ctl00_CenterAreaHolder_DDLPanel']//option")
+	List<WebElement> AppointmentTo_DDLPanel;
+
 	// to locate the input box(Panel) "Appointment Date"
 	@FindBy(id = "ctl00_CenterAreaHolder_ImgBtnPanelCalender")
 	WebElement AppointmentDate_ImgBtnPanelCalender;
@@ -119,11 +130,15 @@ public class AssignAppointmentPage extends Testbase {
 
 	// to locate the radio button list(Panel) "Case Type"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblPnlCaseType']//input[@type='radio']")
-	WebElement CaseType_rblPanel;
+	List<WebElement> CaseType_rblPanel;
 
 	// to locate the radio button list(Panel) "Appointment In"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_RBLPanelAppointmentIn']//input[@type='radio']")
-	WebElement AppointmentIn_rblPanel;
+	List<WebElement> AppointmentIn_rblPanel;
+
+	// to locate the check Box "Is Corporate Appointment"
+	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_IsPnlAppforCorporate']")
+	WebElement IsPnlAppforCorporate;
 
 	// to locate the button(Panel) "Submit"
 	@FindBy(id = "ctl00_CenterAreaHolder_BTNPanelSubmit")
@@ -166,6 +181,165 @@ public class AssignAppointmentPage extends Testbase {
 	public LoginPage clickLogout() throws Throwable {
 		menu_logout.click();
 		return new LoginPage();
+	}
+
+	// Return the value for Appointment With
+	public String selectAppointmentWith(String AppointmentWith) {
+		String AppWith = null;
+		for (int i = 0; i < AppointmentWith_rbl.size(); i++) {
+			if (AppointmentWith.equals(AppointmentWith_rbl.get(i).getText())) {
+				AppointmentWith_rbl.get(i).click();
+				AppWith = AppointmentWith_rbl.get(i).getText();
+				break;
+			}
+		}
+		return AppWith;
+	}
+
+	// Return the value for "Clinic Location"
+	public String selectClinicLocation(String clinicLocation) {
+		String location = null;
+		for (int i = 0; i < ClinicLocation_rbl.size(); i++) {
+			if (clinicLocation.equals(ClinicLocation_rbl.get(i).getText())) {
+				ClinicLocation_rbl.get(i).click();
+				location = ClinicLocation_rbl.get(i).getText();
+				break;
+			}
+		}
+		return location;
+
+	}
+	
+	/********************Actions to book the Dr Appointment*********************/
+	// Return the value for Doctor "Appointment to"
+	public void selectDrAppointmentTo(String appointmentTo) {		
+		//Select opt = new Select(AppointmentTo_DDLDoctor);
+		
+		if(AppointmentTo_DDLDoctor.size()>1)
+		{
+		for(int i=0; i<AppointmentTo_DDLDoctor.size(); i++)
+		{
+			if(appointmentTo.equals(AppointmentTo_DDLDoctor.get(i).getText()))
+				AppointmentTo_DDLDoctor.get(i).click();
+		}
+		}
+		
+		//opt.selectByVisibleText(appointmentTo.trim());
+	}
+
+	// Return the value for Doctor "Case Type"
+	public String selectDrCaseType(String caseType) {
+		String Case = null;
+		for (int i = 0; i < CaseType_rbl.size(); i++) {
+			if (caseType.equals(CaseType_rbl.get(i).getText())) {
+				JavascriptExecutor js = (JavascriptExecutor)driver;
+				js.executeScript("arguments[0].scrollIntoView(true);", CaseType_rbl.get(i));
+				CaseType_rbl.get(i).click();
+				Case = CaseType_rbl.get(i).getText();
+				break;
+			}
+		}
+		return Case;
+	}
+
+	// Return the value for Doctor "Appointment In"
+	public String selectDrAppointmentIn(String AppointmentIn) {
+		String AppIn = null;
+		for (int i = 0; i < AppointmentIn_rblDoctor.size(); i++) {
+			if (AppointmentIn.equals(AppointmentIn_rblDoctor.get(i).getText())) {
+				AppointmentIn_rblDoctor.get(i).click();
+				AppIn = AppointmentIn_rblDoctor.get(i).getText();
+				break;
+			}
+		}
+		return AppIn;
+	}
+
+	// To check/uncheck the checkbox "Patient Not Brought"
+	public void checkPatientNotBrought(String Status) {
+		if ((Status.toLowerCase()).equals("No")) {
+			if (PatientNotBrought_cb.isSelected())
+				PatientNotBrought_cb.click();
+		} else
+			PatientNotBrought_cb.click();
+	}
+
+	//Check IsForCorporateAppointment is enable on page
+	public boolean isCorporateAppointmentVisible()
+	{
+		boolean isVisible = false;
+		if(IsDrAppforCorporate.isEnabled()||IsPnlAppforCorporate.isEnabled())
+			isVisible = true;
+		return isVisible;
+	}
+
+	// To check/uncheck the checkbox "Patient Not Brought"
+	public void checkIsCorporateAppointment(String Status) {
+		if ((Status.toLowerCase()).equals("no")) {
+			if (IsDrAppforCorporate.isSelected())
+				IsDrAppforCorporate.click();
+		} else
+			IsDrAppforCorporate.click();
+	}
+
+	// To book Dr appointment click "Submit" button
+	public void clickDrSubmitApp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("argument[0].ScrollIntoView();", Submit_btnDoctor);
+		Submit_btnDoctor.click();
+	}
+	
+	/********************Actions to book the Panel Appointment*********************/
+	// Return the value for Doctor "Appointment to"
+	public void selectPnlAppointmentTo(String appointmentTo) {		
+		//Select opt = new Select(AppointmentTo_DDLDoctor);
+		
+		if(AppointmentTo_DDLPanel.size()>1)
+		{
+		for(int i=0; i<AppointmentTo_DDLPanel.size(); i++)
+		{
+			if(appointmentTo.equals(AppointmentTo_DDLPanel.get(i).getText()))
+				AppointmentTo_DDLPanel.get(i).click();
+		}
+		}
+		
+		//opt.selectByVisibleText(appointmentTo.trim());
+	}
+
+	// Return the value for Doctor "Case Type"
+	public String selectPnlCaseType(String caseType) {
+		String Case = null;
+		for (int i = 0; i < CaseType_rblPanel.size(); i++) {
+			if (caseType.equals(CaseType_rblPanel.get(i).getText())) {
+				JavascriptExecutor js = (JavascriptExecutor)driver;
+				js.executeScript("arguments[0].scrollIntoView(true);", CaseType_rblPanel.get(i));
+				CaseType_rblPanel.get(i).click();
+				Case = CaseType_rblPanel.get(i).getText();
+				break;
+			}
+		}
+		return Case;
+	}
+
+	// Return the value for Doctor "Appointment In"
+	public String selectPnlAppointmentIn(String AppointmentIn) {
+		String AppIn = null;
+		for (int i = 0; i < AppointmentIn_rblPanel.size(); i++) {
+			if (AppointmentIn.equals(AppointmentIn_rblPanel.get(i).getText())) {
+				AppointmentIn_rblPanel.get(i).click();
+				AppIn = AppointmentIn_rblPanel.get(i).getText();
+				break;
+			}
+		}
+		return AppIn;
+	}
+
+
+	// To book Dr appointment click "Submit" button
+	public void clickPnlSubmit() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("argument[0].ScrollIntoView();", Submit_btnPanel);
+		Submit_btnPanel.click();
 	}
 
 }

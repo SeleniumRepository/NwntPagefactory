@@ -1,6 +1,6 @@
 package com.nwnt.qa.pages;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -344,7 +344,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -360,7 +360,7 @@ public class HomePage extends Testbase
 				if(!existMain)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
-					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					action.moveToElement(pageTab.get(p)).click().build().perform();
 				}
 				else
 					break;
@@ -369,7 +369,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Stress-o-meter Test" Button
-	public UserSOMDetailPage clickBtnSOMtest()
+	public UserSOMDetailPage clickBtnSOMtest() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -406,7 +406,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Advance Payment" Button
-	public AdvancePaymentsPage clickBtnAdvancePayments()
+	public AdvancePaymentsPage clickBtnAdvancePayments() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -441,7 +441,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Print Prescriptions" Button
-	public PrintPrescriptionsPage clickBtnPrintPrescriptions()
+	public AllPrescriptionPage clickBtnPrintPrescriptions() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -472,7 +472,7 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
-		return new PrintPrescriptionsPage();
+		return new AllPrescriptionPage();
 	}
 	
 	//Click "Print Previous Receipts" Button

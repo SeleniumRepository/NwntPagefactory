@@ -9,7 +9,7 @@ import com.nwnt.qa.util.Xls_Reader;
 
 public class ChangePasswordPage extends Testbase
 {
-	Xls_Reader reader = new Xls_Reader();
+	Xls_Reader reader = new Xls_Reader(prop.getProperty("Path_TestData"));
 	
 	//For Home link in menubar
 	@FindBy(xpath="//a[contains(text(),'Home')]//ancestor::div[@class='tpmnus']")
@@ -121,14 +121,14 @@ public class ChangePasswordPage extends Testbase
 		//To change the existing password
 		public void changePassword() throws Throwable
 		{
-			String[][] abc =  reader.getcelldata();
+			String[][] abc =  reader.getcelldata(prop.getProperty("ChangePassSheetData"));
+			//reader.getcelldata(prop.getProperty("ChangePassSheetData"));
 			for(int r=1; r<abc.length; r++)
-				{	System.out.println("Array using no. "+r+ " Row.");
-					System.out.println("Array have "+abc[r].length+ " Columns.");				
+				{	/*System.out.println("Array using no. "+r+ " Row.");
+					System.out.println("Array have "+abc[r].length+ " Columns.");*/				
 					PageFactory.initElements(driver, this);
 					for(int c=0;c< abc[r].length;c++)
 					{
-						//System.out.println(abc[r][c]);
 						if(c==0)
 						{
 							txt_oldPwd.clear();

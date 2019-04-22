@@ -1,122 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="6" passed="5">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="59252" started-at="2019-03-28T10:20:01Z" finished-at="2019-03-28T10:21:01Z">
+  <suite name="Default suite" duration-ms="55336" started-at="2019-04-22T13:08:14Z" finished-at="2019-04-22T13:09:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="59252" started-at="2019-03-28T10:20:01Z" finished-at="2019-03-28T10:21:01Z">
-      <class name="com.nwnt.qa.testcases.HomePageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="13190" started-at="2019-03-28T15:50:01Z" finished-at="2019-03-28T15:50:15Z">
+    <test name="Default test" duration-ms="55336" started-at="2019-04-22T13:08:14Z" finished-at="2019-04-22T13:09:09Z">
+      <class name="com.nwnt.qa.testcases.AllPrescriptionPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="setup" is-config="true" duration-ms="11991" started-at="2019-04-22T18:38:14Z" finished-at="2019-04-22T18:38:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="clickAssignAppointmentTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="clickAssignAppointmentTest" duration-ms="2217" started-at="2019-03-28T15:50:15Z" finished-at="2019-03-28T15:50:17Z">
-          <exception class="java.lang.IndexOutOfBoundsException">
-            <message>
-              <![CDATA[Index: 7, Size: 7]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 7, Size: 7
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at com.nwnt.qa.pages.HomePage.clickBtnAssignAppointment(HomePage.java:362)
-	at com.nwnt.qa.testcases.HomePageTest.clickAssignAppointmentTest(HomePageTest.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+        <test-method status="PASS" signature="viewPrescription()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="viewPrescription" duration-ms="42312" started-at="2019-04-22T18:38:26Z" finished-at="2019-04-22T18:39:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickAssignAppointmentTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1002" started-at="2019-03-28T15:50:17Z" finished-at="2019-03-28T15:50:18Z">
+        </test-method> <!-- viewPrescription -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1013" started-at="2019-04-22T18:39:08Z" finished-at="2019-04-22T18:39:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="7362" started-at="2019-03-28T15:50:18Z" finished-at="2019-03-28T15:50:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="homePageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="homePageTitleTest" duration-ms="11" started-at="2019-03-28T15:50:25Z" finished-at="2019-03-28T15:50:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- homePageTitleTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1308" started-at="2019-03-28T15:50:25Z" finished-at="2019-03-28T15:50:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="7979" started-at="2019-03-28T15:50:27Z" finished-at="2019-03-28T15:50:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="clickingUrProfileTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="clickingUrProfileTest" duration-ms="1129" started-at="2019-03-28T15:50:35Z" finished-at="2019-03-28T15:50:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickingUrProfileTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1026" started-at="2019-03-28T15:50:36Z" finished-at="2019-03-28T15:50:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="6511" started-at="2019-03-28T15:50:37Z" finished-at="2019-03-28T15:50:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="clickChangePasswordTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="clickChangePasswordTest" duration-ms="467" started-at="2019-03-28T15:50:43Z" finished-at="2019-03-28T15:50:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickChangePasswordTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="886" started-at="2019-03-28T15:50:44Z" finished-at="2019-03-28T15:50:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="6431" started-at="2019-03-28T15:50:45Z" finished-at="2019-03-28T15:50:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="clickAppointmentsTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="clickAppointmentsTest" duration-ms="574" started-at="2019-03-28T15:50:51Z" finished-at="2019-03-28T15:50:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickAppointmentsTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1009" started-at="2019-03-28T15:50:52Z" finished-at="2019-03-28T15:50:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="setup" is-config="true" duration-ms="6643" started-at="2019-03-28T15:50:53Z" finished-at="2019-03-28T15:50:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="clickLogoutTest()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="clickLogoutTest" duration-ms="476" started-at="2019-03-28T15:50:59Z" finished-at="2019-03-28T15:51:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickLogoutTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1006" started-at="2019-03-28T15:51:00Z" finished-at="2019-03-28T15:51:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
+      </class> <!-- com.nwnt.qa.testcases.AllPrescriptionPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,5 +1,6 @@
 package com.nwnt.qa.testcases;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -47,7 +48,7 @@ public class ChangePasswordTest extends Testbase
 	}
 	
 	@Test(priority=1)
-	public void ChangePassTest() throws Throwable 
+	public void changePassTest() throws Throwable 
 	{
 		try {
 			changePass = homePage.clickChangePassword();
@@ -60,7 +61,7 @@ public class ChangePasswordTest extends Testbase
 	}
 	
 	@Test(priority=2)
-	public void YourProfileTest()
+	public void yourProfileTest()
 	{
 		try {
 			yourProfile =changePass.clickYourProfile();
@@ -71,7 +72,7 @@ public class ChangePasswordTest extends Testbase
 	}
 	
 	@Test(priority=3)
-	public void AppointmentsTest()
+	public void appointmentsTest()
 	{
 		try {
 			appointments = changePass.clickAppointment();
@@ -82,7 +83,7 @@ public class ChangePasswordTest extends Testbase
 	}
 	
 	@Test(priority=4)
-	public void LogoutTest()
+	public void logoutTest()
 	{
 		try {
 			loginPage = changePass.clickLogout();
@@ -90,6 +91,12 @@ public class ChangePasswordTest extends Testbase
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@AfterMethod
+	public void teardown()
+	{
+		driver.quit();
 	}
 
 } 
