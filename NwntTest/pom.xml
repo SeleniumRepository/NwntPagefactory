@@ -15,6 +15,12 @@
   </properties>
 
   <dependencies>
+  <!-- https://mvnrepository.com/artifact/com.sikulix/sikulixapi -->
+<dependency>
+    <groupId>com.sikulix</groupId>
+    <artifactId>sikulixapi</artifactId>
+    <version>1.1.0</version>
+</dependency>
     
     <!-- <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
@@ -66,6 +72,8 @@
     <artifactId>poi-examples</artifactId>
     <version>3.16</version>
 </dependency>
+
+
 
   </dependencies>
 </project>

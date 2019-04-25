@@ -5,17 +5,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.nwnt.qa.base.Testbase;
-import com.nwnt.qa.pages.AllPrescriptionPage;
 import com.nwnt.qa.pages.HomePage;
 import com.nwnt.qa.pages.LoginPage;
+import com.nwnt.qa.pages.ViewPreviousPayReceiptsPage;
 
-public class AllPrescriptionPageTest extends Testbase
+public class ViewPreviousPayReceiptsTest extends Testbase
 {
 	LoginPage loginPage;
 	HomePage homePage;
-	AllPrescriptionPage allPrescriptionPage;
-
-	public AllPrescriptionPageTest() throws Throwable 
+	ViewPreviousPayReceiptsPage printPreviousReceiptsPage;
+	
+	public ViewPreviousPayReceiptsTest() throws Throwable 
 	{
 		super();
 	}
@@ -26,14 +26,14 @@ public class AllPrescriptionPageTest extends Testbase
 		initialization();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
-		allPrescriptionPage = new AllPrescriptionPage();
-		allPrescriptionPage = (loginPage.login()).clickBtnPrintPrescriptions();
+		printPreviousReceiptsPage = new ViewPreviousPayReceiptsPage();
+		printPreviousReceiptsPage = (loginPage.login()).clickBtnPrintPreviousReceipts();
 	}
 	
 	@Test
-	public void viewPrescription() throws Throwable
+	public void countViewReceipt() throws Throwable
 	{
-		allPrescriptionPage.openPrescriptionOf("20-04-2019");
+		printPreviousReceiptsPage.openPaymentReceiptOf("20-Apr-2019");
 	}
 	
 	@AfterMethod

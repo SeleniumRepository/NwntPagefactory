@@ -1,10 +1,6 @@
 package com.nwnt.qa.pages;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Locale;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -72,7 +68,7 @@ public class AllPrescriptionPage extends Testbase
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void openPrescriptionOf(String givenPresDate)
+	public PrintPrescriptionsPage openPrescriptionOf(String givenPresDate) throws Throwable
 	{
 		for(int i=0,j=2; i<lblAppointmentsTime.size()&&j<2+lblAppointmentsTime.size(); i++,j++)
 		{
@@ -92,6 +88,7 @@ public class AllPrescriptionPage extends Testbase
 				}
 			}
 		}
+		return new PrintPrescriptionsPage();
 	}
 
 }

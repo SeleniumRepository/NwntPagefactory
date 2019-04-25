@@ -379,7 +379,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -416,7 +416,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -451,7 +451,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -476,7 +476,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Print Previous Receipts" Button
-	public PrintPreviousReceiptsPage clickBtnPrintPreviousReceipts()
+	public ViewPreviousPayReceiptsPage clickBtnPrintPreviousReceipts() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;
@@ -486,7 +486,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -507,7 +507,7 @@ public class HomePage extends Testbase
 				else
 					break;
 		}
-		return new PrintPreviousReceiptsPage();
+		return new ViewPreviousPayReceiptsPage();
 	}
 	
 	//Click "View Open Appointments" Button
@@ -521,7 +521,7 @@ public class HomePage extends Testbase
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{
@@ -554,9 +554,9 @@ public class HomePage extends Testbase
 		{
 			if(existMain)
 			{break;}
-				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//aa"));
+				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
 				
-				for(int i=0; i<visitorsName.size()-7; i++)
+				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
 					{

@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="55336" started-at="2019-04-22T13:08:14Z" finished-at="2019-04-22T13:09:09Z">
+  <suite name="Default suite" duration-ms="24390" started-at="2019-04-25T10:49:35Z" finished-at="2019-04-25T10:49:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="55336" started-at="2019-04-22T13:08:14Z" finished-at="2019-04-22T13:09:09Z">
-      <class name="com.nwnt.qa.testcases.AllPrescriptionPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="setup" is-config="true" duration-ms="11991" started-at="2019-04-22T18:38:14Z" finished-at="2019-04-22T18:38:26Z">
+    <test name="Default test" duration-ms="24390" started-at="2019-04-25T10:49:35Z" finished-at="2019-04-25T10:49:59Z">
+      <class name="com.nwnt.qa.testcases.PrintPreviousPayReceiptTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.PrintPreviousPayReceiptTest@26be92ad]" name="setup" is-config="true" duration-ms="9538" started-at="2019-04-25T16:19:35Z" finished-at="2019-04-25T16:19:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="viewPrescription()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="viewPrescription" duration-ms="42312" started-at="2019-04-22T18:38:26Z" finished-at="2019-04-22T18:39:08Z">
+        <test-method status="PASS" signature="printReceipt()[pri:0, instance:com.nwnt.qa.testcases.PrintPreviousPayReceiptTest@26be92ad]" name="printReceipt" duration-ms="13831" started-at="2019-04-25T16:19:44Z" finished-at="2019-04-25T16:19:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- viewPrescription -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.AllPrescriptionPageTest@69b2283a]" name="teardown" is-config="true" duration-ms="1013" started-at="2019-04-22T18:39:08Z" finished-at="2019-04-22T18:39:09Z">
+        </test-method> <!-- printReceipt -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.PrintPreviousPayReceiptTest@26be92ad]" name="teardown" is-config="true" duration-ms="1002" started-at="2019-04-25T16:19:58Z" finished-at="2019-04-25T16:19:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.nwnt.qa.testcases.AllPrescriptionPageTest -->
+      </class> <!-- com.nwnt.qa.testcases.PrintPreviousPayReceiptTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -2,10 +2,15 @@ package com.nwnt.qa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class PrintPreviousReceiptsPage 
+import com.nwnt.qa.base.Testbase;
+
+public class ViewPreviousPayReceiptsPage extends Testbase
 {
 	// to locate the element "Home" in menu bar
 	@FindBy(xpath = "//a[contains(text(),'Home')]//ancestor::div[@class='tpmnus']")
@@ -52,16 +57,43 @@ public class PrintPreviousReceiptsPage
 	WebElement ImgPhoto;
 	
 	//to locate the label "Receipt Date"
-	@FindBy(xpath="//Input[@id='ctl00_CenterAreaHolder_grdPaymentDetail_ctl02_btnPrintRecepit']")
-	WebElement btnReceiptDate;
+	//@FindBy(xpath="//Input[@id='ctl00_CenterAreaHolder_grdPaymentDetail_ctl02_btnPrintRecepit']")
+	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdPaymentDetail']//input[@type='submit']")
+	List<WebElement> btnReceiptsDate;
 	
 	//to locate the image button "Print"
-	@FindBy(xpath="//Input[@id='ctl00_CenterAreaHolder_grdPaymentDetail_ctl02_imgButtonPrint']")
-	WebElement imgButtonPrint;
+	//@FindBy(xpath="//Input[@id='ctl00_CenterAreaHolder_grdPaymentDetail_ctl02_imgButtonPrint']")
+	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdPaymentDetail']//input[@type='image']")
+	List<WebElement> imgButtonsPrint;
 	
 	//to locate the rows in table "Payment Detail"
 	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdPaymentDetail']//tr")
 	List<WebElement> grdPaymentDetail;
-
+	
+	public ViewPreviousPayReceiptsPage() throws Throwable
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	public PrintPreviousPayReceiptPage openPaymentReceiptOf(String givenReceiptDate) throws Throwable
+	{
+		for(int i=0,j=2; i<btnReceiptsDate.size()&&j<2+btnReceiptsDate.size(); i++,j++)
+		{
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			jse.executeScript("arguments[0].scrollIntoView();", btnReceiptsDate.get(i));
+			System.out.println(btnReceiptsDate.get(i).getAttribute("value"));
+			if(givenReceiptDate.equals(btnReceiptsDate.get(i).getAttribute("value")))
+			{
+				String dateId = btnReceiptsDate.get(i).getAttribute("id");
+				String strImgBtnPrint = dateId.replace(dateId.substring(dateId.lastIndexOf("_")+1), "imgButtonPrint");
+				if(driver.findElement(By.id(strImgBtnPrint)).isDisplayed())
+				{
+					driver.findElement(By.id(strImgBtnPrint)).click();
+					break;
+				}
+			}
+		}
+		return new PrintPreviousPayReceiptPage();
+	}
 
 }
