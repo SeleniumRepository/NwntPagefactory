@@ -546,7 +546,7 @@ public class HomePage extends Testbase
 	}
 	
 	//Click "Upload Prescriptions" Button
-	public UploadPrescriptionsPage clickBtnUploadPrescriptions()
+	public UploadPrescriptionsPage clickBtnUploadPrescriptions() throws Throwable
 	{
 		List<WebElement> pageTab = driver.findElements(By.xpath("//tr[@class='tbl-footer']//a"));
 		boolean existMain=false;

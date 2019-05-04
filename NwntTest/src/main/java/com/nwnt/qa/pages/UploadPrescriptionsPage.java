@@ -1,9 +1,14 @@
 package com.nwnt.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
-public class UploadPrescriptionsPage 
+import com.nwnt.qa.base.Testbase;
+
+public class UploadPrescriptionsPage extends Testbase
 {
 	// to locate the element "Home" in menu bar
 	@FindBy(xpath = "//a[contains(text(),'Home')]//ancestor::div[@class='tpmnus']")
@@ -82,15 +87,138 @@ public class UploadPrescriptionsPage
 	/**********Elements under heading "Revised Medicine"**********/
 	//to locate the textbox "Compalint" 
 	@FindBy(xpath="//textarea[@id='ctl00_CenterAreaHolder_Precomputerization1_TxtComplain']")
-	WebElement TxtComplain;
+	WebElement txtComplaint;
 	
 	//to locate the textbox "Revised Medicine"
 	@FindBy(xpath="//textarea[@id='ctl00_CenterAreaHolder_Precomputerization1_TxtRevisedMedicine']")
-	WebElement TxtRevisedMedicine;
+	WebElement txtRevisedMedicine;
 	
 	//to locate the button "Add"
 	@FindBy(xpath="//input[@id='ctl00_CenterAreaHolder_Precomputerization1_btnRevisedMedicine']")
-	WebElement btnAdd;
-
+	WebElement btnAddRevisedMedicine;
+	
+	public UploadPrescriptionsPage() throws Throwable
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	
+	/*******Activities to Upload Lab Reports********/
+	//Select a investigation category from dropdownlist
+	public void selectLabReportType(String reportCatg)
+	{
+		Select lr = new Select(ddlInvestigationCategory);
+		lr.selectByVisibleText(reportCatg);
+		//jse.executeScript("arguments[0].scrollIntoView(true);", reportCatg);
+	}
+	
+	//Select given date (in dd-mmm-yyyy format) from Calender control
+	public void selectLabReportDateInCalender(String givenDate)
+	{
+		
+	}
+	
+	//Directly input the given date(in dd-mmm-yyyy format) in textbox
+	public void inputLabReportDate(String givenDate)
+	{
+		txtInvestigationDate.sendKeys(givenDate);
+	}
+	
+	//click Browse button or send direct path to upload a file
+	public void clickFileSelectionBrowseBtn(String filePath)
+	{
+		fuPrescription.sendKeys(filePath);
+	}
+	
+	//click Upload button to upload the selected file
+	public void clickFileUploadBtn()
+	{
+		btnUpload.click();
+	}
+	
+	public void uploadLabReports()
+	{
+		selectLabReportType("Vitamin B12");
+		inputLabReportDate("20-Apr-2019");
+		clickFileSelectionBrowseBtn("given FilePath");
+		clickFileUploadBtn();
+	}
+	
+	/******Activities to save the Investigation values******/
+	//select given Investigation in dropdownlist 
+	public void selectInvestigation(String givenInvs)
+	{
+		Select invs = new Select(ddlInvestigations);
+		invs.selectByVisibleText(givenInvs);
+	}
+	
+	//Input patient Value
+	public void inputPatientValue(String patientVal)
+	{
+		txtPatientValue.sendKeys(patientVal);
+	}
+	
+	//input investigation date from 
+	public void inputInvestDate(String givenDate)
+	{
+		txtLabInvestigationDate.sendKeys(givenDate);
+	}
+	
+	//input the investigation date from calendar control
+	public void selectInvestigationDate()
+	{
+		ImgBtncalanderInvestigations.click();
+		/*
+		 and select a date from calender
+		 */
+	}
+	
+	//click to add the investigation
+	public void clickBtnAddDocEvalInvestigation()
+	{
+		btnAddDocEvalInvestigation.click();
+	}
+	
+	//click the save button to save the added investigation
+	public void clickBtnSaveInvestigation()
+	{
+		btnSaveInvestigation.click();
+	}
+	
+	public void addInvestigation()
+	{
+		selectInvestigation("Haemoglobin");
+		inputPatientValue("14.34");
+		inputInvestDate("20-Apr-2019");
+		clickBtnAddDocEvalInvestigation();
+	}
+	
+	/*****Activities to add the Revised Medicine*****/
+	//Input complaint in textbox
+	public void inputComplaint(String givenComplaint)
+	{
+		txtComplaint.sendKeys(givenComplaint);
+	}
+	
+	//input Revised medicine in textbox
+	public void inputRevisedMedicine(String revisedMedicine)
+	{
+		txtRevisedMedicine.sendKeys(revisedMedicine);
+	}
+	
+	//click Add button to add the revised medicine
+	public void clickBtnAddcompalint()
+	{
+		btnAddRevisedMedicine.click();
+	}
+	
+	//Add Revised Medicine
+	public void addRevisedMedicine()
+	{
+		inputComplaint("Few complaints increased/decreased, reported by patient.");
+		inputRevisedMedicine("Revised/adjusted medicines by doctor");
+		clickBtnAddcompalint();
+	}
 
 }

@@ -21,7 +21,7 @@ public class ChangePasswordTest extends Testbase
 	ChangePasswordPage changePass;
 	AppointmentPage appointments;
 	LogoutPage logout;
-	Xls_Reader reader;
+	//Xls_Reader reader;
 	
 	public ChangePasswordTest() throws Throwable
 	{

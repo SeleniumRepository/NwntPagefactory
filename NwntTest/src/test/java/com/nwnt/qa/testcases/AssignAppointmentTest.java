@@ -1,8 +1,6 @@
 package com.nwnt.qa.testcases;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -19,7 +17,11 @@ public class AssignAppointmentTest extends Testbase
 	AssignAppointmentPage assignAppPage;
 	HomePage homePage;
 	LoginPage loginPage;
-
+	
+	//Xls_Reader xlsReader;
+	
+	//XL_Reader xlReader;
+       
 	public AssignAppointmentTest() throws Throwable 
 	{
 		super();
@@ -34,39 +36,73 @@ public class AssignAppointmentTest extends Testbase
 		assignAppPage = new AssignAppointmentPage();
 		homePage = loginPage.login();
 		assignAppPage = homePage.clickBtnAssignAppointment();
+		
+		//xlsReader = new Xls_Reader();
+		//xlReader = new XL_Reader();
 	}
 	
-	@DataProvider
-	public Iterator<Object[]> getTestData()
+	//@DataProvider
+	/*public Iterator<Object[]> getTestData()
 	{
 		ArrayList<Object[]> testData = TestUtil.getDataFromExcel();
 		return testData.iterator();
+	}*/
+	@DataProvider
+	public Object[][] getDrAppTestData() throws Throwable
+	{
+		//String[][] data = xlsReader.getCellData();
+		//Object[][] data = xlsReader.getTestData();
+		Object[][] data = TestUtil.getTestData(prop.getProperty("testDatafilePath"), prop.getProperty("drAppSheetName"));
+		return data;
+		/*for(int r=1, c=0; r<xlsReader.getRowCount()&&c<xlsReader.getColCount(); r++,c++)
+		{
+			String str1 = data[r][c];
+		}*/
+		
 	}
 	
-	@Test(dataProvider="getTestData")
+	@Test(dataProvider="getDrAppTestData")
 	public void assignDrAppointmentTest(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String PatientNotBrought, String IsCorporateVisitor)
 	{
+		System.out.println("AppointmentWith "+AppointmentWith+" ClinicLocation "+ClinicLocation+" AppointmentTo "+AppointmentTo+" CaseType "+CaseType+" AppointmentIn "+AppointmentIn+" PatientNotBrought "+PatientNotBrought+" IsCorporateVisitor "+IsCorporateVisitor);
 		assignAppPage.selectAppointmentWith(AppointmentWith);
 		assignAppPage.selectClinicLocation(ClinicLocation);
 		assignAppPage.selectDrAppointmentTo(AppointmentTo);
 		assignAppPage.selectDrCaseType(CaseType);
 		assignAppPage.selectDrAppointmentIn(AppointmentIn);
 		assignAppPage.checkPatientNotBrought(PatientNotBrought);
-		if(assignAppPage.isCorporateAppointmentVisible()==true)
-			assignAppPage.checkIsCorporateAppointment(IsCorporateVisitor);
+		try {
+			if (assignAppPage.isDrCorporateAppointmentVisible() == true)
+				assignAppPage.checkIsDrCorporateAppointment(IsCorporateVisitor);
+		} catch (NoSuchElementException e) {
+			System.out.println("This visitor is not eligible for Corporate Appointment.");
+		}
+		
 		//assignAppPage.clickDrSubmitApp();
 	}
 	
-	@Test(dataProvider="getTestData")
-	public void assignPnlAppointmentTest(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String PatientNotBrought, String IsCorporateVisitor)
+	@DataProvider
+	public Object[][] getPnlAppTestData() throws Throwable
+	{
+		Object[][] data = TestUtil.getTestData(prop.getProperty("testDatafilePath"), prop.getProperty("pnlAppSheetName"));
+		return data;
+	}
+	
+	@Test(dataProvider="getPnlAppTestData")
+	public void assignPnlAppointmentTest(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String IsCorporateVisitor)
 	{
 		assignAppPage.selectAppointmentWith(AppointmentWith);
 		assignAppPage.selectClinicLocation(ClinicLocation);
 		assignAppPage.selectPnlAppointmentTo(AppointmentTo);
 		assignAppPage.selectPnlCaseType(CaseType);
 		assignAppPage.selectPnlAppointmentIn(AppointmentIn);
-		if(assignAppPage.isCorporateAppointmentVisible()==true)
-			assignAppPage.checkIsCorporateAppointment(IsCorporateVisitor);
+		try 
+		{
+			if(assignAppPage.isPnlCorporateAppointmentVisible()==true)
+				assignAppPage.checkIsPnlCorporateAppointment(IsCorporateVisitor);
+		}
+		catch(NoSuchElementException e)
+		{System.out.println("This visitor is not eligible for Corporate Appointment.");}
 		//assignAppPage.clickDrSubmitApp();
 	}
 	

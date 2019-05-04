@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 //import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -29,15 +30,13 @@ public class Xls_Reader extends Testbase
 	private XSSFRow row = null;
 	private XSSFCell cell = null;
 		
-	/*String sheetname = prop.getProperty("ChangePassSheetData");*/
+	String sheetname = prop.getProperty("ChangePassSheetData");
 	
 	//To get the excel file name 
-	//public Xls_Reader(String Path) throws Throwable
 	public Xls_Reader(String Path) throws Throwable
 	{
 		this.Path=Path;
 		try {
-		//File file = new File(prop.getProperty("Path_TestData"));
 		File file = new File(Path);
 		fis = new FileInputStream(file);
 		workbook = new XSSFWorkbook(fis);
@@ -56,44 +55,94 @@ public class Xls_Reader extends Testbase
 	}
 	
 	//returns the row count in the respective sheet
-	public int getRowCount(String sheetname)
-	{
-		int index = workbook.getSheetIndex(sheetname);
-		if(index==-1)
-			return 0;
-		else
+		public int getRowCount(String sheetname)
 		{
-			//sheet = workbook.getSheet(sheetname);
-			int rowCount = sheet.getLastRowNum();
-			return rowCount;
+			int index = workbook.getSheetIndex(sheetname);
+			if(index==-1)
+				return 0;
+			else
+			{
+				//sheet = workbook.getSheet(sheetname);
+				int rowCount = sheet.getLastRowNum();
+				return rowCount;
+			}
 		}
+		
+		//returns the Column count in the respective sheet
+		public int getColCount(String sheetname)
+		{
+			sheet = workbook.getSheet(sheetname);
+			int colNum = sheet.getRow(1).getLastCellNum();
+			if(colNum==-1)
+				return 0;
+			else
+				return colNum-1;
+		}
+		
+		
+		//to returns the cell data on passing as arguments(only sheetname)
+		public String[][] getcelldata(String sheetName)
+		{
+			
+			String[][] LoginData = new String[5][3];
+			sheet = workbook.getSheet(sheetName);  
+			for(int r=1; r<=this.getRowCount(sheetName); r++)
+			{
+				for(int c=0; c<=this.getColCount(sheetName); c++)
+				{
+					String str = sheet.getRow(r).getCell(c).getStringCellValue();
+					if(str!=null)
+					LoginData[r][c] = sheet.getRow(r).getCell(c).getStringCellValue();
+				} 
+				
+			}
+			try {
+				workbook.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return LoginData;
+		}
+		
+	
+	/****************************************************************************************************/
+	/*//Constructor to get respective sheet with no argument
+	public Xls_Reader() throws Throwable
+	{ 
+		File xlFile = new File(prop.getProperty("testDataFilePath"));
+		fis = new FileInputStream(xlFile);
+		workbook = new XSSFWorkbook(fis);
+		for(int i=0; i<workbook.getNumberOfSheets(); i++)
+		{
+			if(workbook.getSheetName(i).equals(prop.getProperty("sheetName")))
+				sheet=workbook.getSheet(workbook.getSheetName(i));
+			break;
+		}
+		
+	}
+	//returns row count in respective sheet
+	public int getRowCount()
+	{
+		return sheet.getLastRowNum();
+	}
+	 //returns column count in respective sheet
+	public int getColCount()
+	{
+		return sheet.getRow(0).getLastCellNum();
 	}
 	
-	//returns the Column count in the respective sheet
-	public int getColCount(String sheetname)
+	//return row-wise cells data
+	public Object[][] getTestData()
 	{
-		sheet = workbook.getSheet(sheetname);
-		int colNum = sheet.getRow(1).getLastCellNum();
-		if(colNum==-1)
-			return 0;
-		else
-			return colNum-1;
-	}
-	//to returns the cell data
-	public String[][] getcelldata(String sheetName)
-	{
-		
-		String[][] LoginData = new String[5][3];
-		sheet = workbook.getSheet(sheetName);  
-		for(int r=1; r<=this.getRowCount(sheetName); r++)
+		//String[][] data = new String[getRowCount()][getColCount()];
+		Object[][] data = new Object[getRowCount()][getColCount()];
+		for(int r=1; r<getRowCount(); r++)
 		{
-			for(int c=0; c<=this.getColCount(sheetName); c++)
+			for(int c=0; c<getColCount(); c++)
 			{
-				String str = sheet.getRow(r).getCell(c).getStringCellValue();
-				if(str!=null)
-				LoginData[r][c] = sheet.getRow(r).getCell(c).getStringCellValue();
-			} 
-			
+				data[r][c]=sheet.getRow(r).getCell(c).getStringCellValue();
+			}
 		}
 		try {
 			workbook.close();
@@ -101,9 +150,21 @@ public class Xls_Reader extends Testbase
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return LoginData;
+		return data;
 	}
 	
+	public ArrayList<Object[]> getExcelData()
+	{
+		ArrayList<Object[]> completeXl = new ArrayList<Object[]>();
+		completeXl.add(getCellData());
+		return completeXl;
+	}*/
+	
+	/**********************************************************************************************/
+	
+	
+	/*
+	//to returns the cell data on passing as arguments(sheetname, colName, rowNum)
 	public String getCellData(String sheetName, String colName, int rowNum)
 	{
 		try
@@ -155,7 +216,7 @@ public class Xls_Reader extends Testbase
 			return "row " + rowNum + " or column " + colName + " does not exist in xls";
 		}
 	}
-	
+*/	
 		
 }
 	

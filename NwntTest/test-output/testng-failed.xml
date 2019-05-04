@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.nwnt.qa.testcases.PrintPreviousPayReceiptTest">
+      <class name="com.nwnt.qa.testcases.UploadPrescriptionTest">
         <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="printReceipt"/>
+          <include name="uploadLabReport"/>
         </methods>
-      </class> <!-- com.nwnt.qa.testcases.PrintPreviousPayReceiptTest -->
+      </class> <!-- com.nwnt.qa.testcases.UploadPrescriptionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

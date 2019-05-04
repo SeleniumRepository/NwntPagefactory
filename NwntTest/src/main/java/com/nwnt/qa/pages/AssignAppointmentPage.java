@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.nwnt.qa.base.Testbase;
 
@@ -40,10 +41,16 @@ public class AssignAppointmentPage extends Testbase {
 	// to locate the radio button list "Appointment with"
 	@FindBy(xpath = "//table[@id = 'ctl00_CenterAreaHolder_RDLAppointmentWith']//input")
 	List<WebElement> AppointmentWith_rbl;
+	
+	@FindBy(xpath = "//table[@id = 'ctl00_CenterAreaHolder_RDLAppointmentWith']//label")
+	List<WebElement> AppointmentWith_rblLabel;
 
 	// to locate the radio button list "Clinic location"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblClinicLocation']//input")
 	List<WebElement> ClinicLocation_rbl;
+	
+	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblClinicLocation']//label")
+	List<WebElement> ClinicLocation_rblLabel;
 
 	// ********Elements present for Doctor Appointment*********
 	// to locate the Dropdown list(Doctor) "Appointment to"
@@ -78,17 +85,24 @@ public class AssignAppointmentPage extends Testbase {
 	// to locate the radio button list "Case Type"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblCaseType']//input[@type='radio']")
 	List<WebElement> CaseType_rbl;
+	
+	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblCaseType']//label")
+	List<WebElement> CaseType_rblLabel;
 
 	// to locate the radio button list "Appointment In"
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_RadioButtonAppointmentIn']//input[@type='radio']")
-	List<WebElement> AppointmentIn_rblDoctor;
+	List<WebElement> AppointmentInDoctor_rbl;
+	
+	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_RadioButtonAppointmentIn']//input[@type='radio']")
+	List<WebElement> AppointmentInDoctor_rblLabel;
 
 	// to locate the check Box "Patient not brought"
 	@FindBy(id = "ctl00_CenterAreaHolder_PatientNotBrought")
 	WebElement PatientNotBrought_cb;
 
 	// to locate the check Box "Is Corporate Appointment"
-	@FindBy(xpath = "//input[@id = 'ctl00_CenterAreaHolder_IsDrAppforCorporate']")
+	//@FindBy(xpath = "//input[@id = 'ctl00_CenterAreaHolder_IsDrAppforCorporate']")
+	@FindBy(xpath = "//table[@class='tbl-normal']//input[@id = 'ctl00_CenterAreaHolder_IsDrAppforCorporate']")
 	WebElement IsDrAppforCorporate;
 
 	// to locate the button "Submit"
@@ -183,103 +197,116 @@ public class AssignAppointmentPage extends Testbase {
 		return new LoginPage();
 	}
 
-	// Return the value for Appointment With
-	public String selectAppointmentWith(String AppointmentWith) {
-		String AppWith = null;
-		for (int i = 0; i < AppointmentWith_rbl.size(); i++) {
-			if (AppointmentWith.equals(AppointmentWith_rbl.get(i).getText())) {
+	// Select the value for Appointment With
+	public void selectAppointmentWith(String AppointmentWith) 
+	{
+		for (int i=0; i<AppointmentWith_rbl.size(); i++) 
+		{
+			if (AppointmentWith.equals(AppointmentWith_rblLabel.get(i).getText())) 
+			{
 				AppointmentWith_rbl.get(i).click();
-				AppWith = AppointmentWith_rbl.get(i).getText();
 				break;
 			}
 		}
-		return AppWith;
 	}
 
-	// Return the value for "Clinic Location"
-	public String selectClinicLocation(String clinicLocation) {
-		String location = null;
-		for (int i = 0; i < ClinicLocation_rbl.size(); i++) {
-			if (clinicLocation.equals(ClinicLocation_rbl.get(i).getText())) {
+	// Select the value for "Clinic Location"
+	public void selectClinicLocation(String clinicLocation) 
+	{
+		for (int i = 0; i < ClinicLocation_rbl.size(); i++) 
+		{
+			if (clinicLocation.equals(ClinicLocation_rblLabel.get(i).getText())) 
+			{
 				ClinicLocation_rbl.get(i).click();
-				location = ClinicLocation_rbl.get(i).getText();
 				break;
 			}
 		}
-		return location;
-
 	}
 	
 	/********************Actions to book the Dr Appointment*********************/
 	// Return the value for Doctor "Appointment to"
-	public void selectDrAppointmentTo(String appointmentTo) {		
-		//Select opt = new Select(AppointmentTo_DDLDoctor);
-		
-		if(AppointmentTo_DDLDoctor.size()>1)
+	public void selectDrAppointmentTo(String appointmentTo) 
+	{
+		// Select opt = new Select(AppointmentTo_DDLDoctor);
+		// opt.selectByVisibleText(appointmentTo.trim());
+		if (AppointmentTo_DDLDoctor.size() > 1) 
 		{
-		for(int i=0; i<AppointmentTo_DDLDoctor.size(); i++)
-		{
-			if(appointmentTo.equals(AppointmentTo_DDLDoctor.get(i).getText()))
-				AppointmentTo_DDLDoctor.get(i).click();
+			for (int i = 0; i < AppointmentTo_DDLDoctor.size(); i++) 
+			{
+				if (appointmentTo.equals(AppointmentTo_DDLDoctor.get(i).getText()))
+					AppointmentTo_DDLDoctor.get(i).click();
+			}
 		}
-		}
-		
-		//opt.selectByVisibleText(appointmentTo.trim());
 	}
 
-	// Return the value for Doctor "Case Type"
-	public String selectDrCaseType(String caseType) {
-		String Case = null;
-		for (int i = 0; i < CaseType_rbl.size(); i++) {
-			if (caseType.equals(CaseType_rbl.get(i).getText())) {
+	// Select the value for Doctor "Case Type"
+	public void selectDrCaseType(String caseType) 
+	{
+		for (int i = 0; i < CaseType_rbl.size(); i++) 
+		{
+			if (caseType.equals(CaseType_rblLabel.get(i).getText())) 
+			{
 				JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", CaseType_rbl.get(i));
 				CaseType_rbl.get(i).click();
-				Case = CaseType_rbl.get(i).getText();
 				break;
 			}
 		}
-		return Case;
 	}
 
-	// Return the value for Doctor "Appointment In"
-	public String selectDrAppointmentIn(String AppointmentIn) {
-		String AppIn = null;
-		for (int i = 0; i < AppointmentIn_rblDoctor.size(); i++) {
-			if (AppointmentIn.equals(AppointmentIn_rblDoctor.get(i).getText())) {
-				AppointmentIn_rblDoctor.get(i).click();
-				AppIn = AppointmentIn_rblDoctor.get(i).getText();
+	// Select the value for Doctor "Appointment In"
+	public void selectDrAppointmentIn(String AppointmentIn) 
+	{
+		for (int i = 0; i < AppointmentInDoctor_rbl.size(); i++) 
+		{
+			if (AppointmentIn.equals(AppointmentInDoctor_rblLabel.get(i).getText())) 
+			{
+				AppointmentInDoctor_rbl.get(i).click();
 				break;
 			}
 		}
-		return AppIn;
 	}
 
-	// To check/uncheck the checkbox "Patient Not Brought"
-	public void checkPatientNotBrought(String Status) {
-		if ((Status.toLowerCase()).equals("No")) {
+	// To check/uncheck the checkbox "PatientNotBrought"
+	public void checkPatientNotBrought(String Status) 
+	{
+		if ((Status.toLowerCase()).equals("no")) 
+		{
 			if (PatientNotBrought_cb.isSelected())
-				PatientNotBrought_cb.click();
-		} else
+			{PatientNotBrought_cb.click();}
+				
+		} else if((Status.toLowerCase()).equals("yes"))
 			PatientNotBrought_cb.click();
 	}
 
 	//Check IsForCorporateAppointment is enable on page
-	public boolean isCorporateAppointmentVisible()
+	public boolean isDrCorporateAppointmentVisible()
 	{
-		boolean isVisible = false;
-		if(IsDrAppforCorporate.isEnabled()||IsPnlAppforCorporate.isEnabled())
+		boolean isVisible=false;
+		if(IsDrAppforCorporate.isDisplayed()==true)
+		{
 			isVisible = true;
+		}
+			
 		return isVisible;
 	}
 
 	// To check/uncheck the checkbox "Patient Not Brought"
-	public void checkIsCorporateAppointment(String Status) {
-		if ((Status.toLowerCase()).equals("no")) {
+	public void checkIsDrCorporateAppointment(String Status) 
+	{
+		if ((Status.toLowerCase()).equals("no")) 
+		{
 			if (IsDrAppforCorporate.isSelected())
 				IsDrAppforCorporate.click();
-		} else
+		} 
+		else if ((Status.toLowerCase()).equals("yes")) 
+		{
+			if (IsDrAppforCorporate.isSelected())
+				System.out.println("Checkbox already checked.");
 			IsDrAppforCorporate.click();
+		} 
+		else
+			System.out.println("Invalid input found. Plz check your Datasheet.");
 	}
 
 	// To book Dr appointment click "Submit" button
@@ -333,6 +360,36 @@ public class AssignAppointmentPage extends Testbase {
 		}
 		return AppIn;
 	}
+	
+	//Check IsForCorporateAppointment is enable on page
+		public boolean isPnlCorporateAppointmentVisible()
+		{
+			boolean isVisible=false;
+			if(IsPnlAppforCorporate.isDisplayed()==true)
+			{
+				isVisible = true;
+			}
+				
+			return isVisible;
+		}
+
+		// To check/uncheck the checkbox "Patient Not Brought"
+		public void checkIsPnlCorporateAppointment(String Status) 
+		{
+			if ((Status.toLowerCase()).equals("no")) 
+			{
+				if (IsDrAppforCorporate.isSelected())
+					IsDrAppforCorporate.click();
+			} 
+			else if ((Status.toLowerCase()).equals("yes")) 
+			{
+				if (IsDrAppforCorporate.isSelected())
+					System.out.println("Checkbox already checked.");
+				IsDrAppforCorporate.click();
+			} 
+			else
+				System.out.println("Invalid input found. Plz check your Datasheet.");
+		}
 
 
 	// To book Dr appointment click "Submit" button

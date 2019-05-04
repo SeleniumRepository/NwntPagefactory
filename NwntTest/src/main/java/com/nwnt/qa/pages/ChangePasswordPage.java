@@ -90,89 +90,81 @@ public class ChangePasswordPage extends Testbase
 		return logoImage_lnk.isDisplayed();
 	}
 	
-	//to access the Your profile page
-		public YourProfilePage clickYourProfile() throws Throwable
-		{
-			menu_yourProfile.click();
-			return new YourProfilePage();
-		}
-		
-		//to access the Change Password page
-		public ChangePasswordPage clickChangePassword() throws Throwable
-		{
-			menu_changePassword.click();
-			return new ChangePasswordPage();
-		}
-		
-		//to access the Appointments page
-		public AppointmentPage clickAppointment() throws Throwable
-		{
-			menu_appointments.click();
-			return new AppointmentPage();
-		}
-		
-		//to Logout from application
-		public LoginPage clickLogout() throws Throwable
-		{
-			menu_logout.click();
-			return new LoginPage();
-		}
-		
-		//To change the existing password
-		public void changePassword() throws Throwable
-		{
-			String[][] abc =  reader.getcelldata(prop.getProperty("ChangePassSheetData"));
-			//reader.getcelldata(prop.getProperty("ChangePassSheetData"));
-			for(int r=1; r<abc.length; r++)
-				{	/*System.out.println("Array using no. "+r+ " Row.");
-					System.out.println("Array have "+abc[r].length+ " Columns.");*/				
-					PageFactory.initElements(driver, this);
-					for(int c=0;c< abc[r].length;c++)
-					{
-						if(c==0)
-						{
-							txt_oldPwd.clear();
-							txt_oldPwd.sendKeys(abc[r][c]);
-						}
-						else if(c==1)
-						{
-							txt_newPwd.clear();
-							txt_newPwd.sendKeys(abc[r][c]);
-						}
-						else if(c==2)
-						{
-							txt_confirmPwd.clear();
-							txt_confirmPwd.sendKeys(abc[r][c]);
-						}
-					}
-					btn_Save.click();
-					this.verifySuccessMsg();	
-				}	
-		}
-		
-		
-		public void verifySuccessMsg() throws Throwable
-		{
-			if(msg_pwdChangeSuccess.isDisplayed())
+	// to access the Your profile page
+	public YourProfilePage clickYourProfile() throws Throwable 
+	{
+		menu_yourProfile.click();
+		return new YourProfilePage();
+	}
+
+	// to access the Change Password page
+	public ChangePasswordPage clickChangePassword() throws Throwable 
+	{
+		menu_changePassword.click();
+		return new ChangePasswordPage();
+	}
+
+	// to access the Appointments page
+	public AppointmentPage clickAppointment() throws Throwable 
+	{
+		menu_appointments.click();
+		return new AppointmentPage();
+	}
+
+	// to Logout from application
+	public LoginPage clickLogout() throws Throwable 
+	{
+		menu_logout.click();
+		return new LoginPage();
+	}
+
+	// To change the existing password
+	public void changePassword() throws Throwable 
+	{
+		String[][] abc = reader.getcelldata(prop.getProperty("ChangePassSheetData"));
+		for (int r = 1; r < abc.length; r++) 
+		{ 
+			for (int c = 0; c < abc[r].length; c++) 
 			{
-				System.out.println(msg_pwdChangeSuccess.getText());
+				if (c == 0) 
+				{
+					txt_oldPwd.clear();
+					txt_oldPwd.sendKeys(abc[r][c]);
+				} else if (c == 1) 
+				{
+					txt_newPwd.clear();
+					txt_newPwd.sendKeys(abc[r][c]);
+				} else if (c == 2) 
+				{
+					txt_confirmPwd.clear();
+					txt_confirmPwd.sendKeys(abc[r][c]);
+				}
 			}
-			
-			else if(msg_invalidFormatPass.isDisplayed())
-			{
-				System.out.println(msg_invalidFormatPass.getText());
-			}
-			else if(msg_compareValidator.isDisplayed())
-			{
-				System.out.println(msg_compareValidator.getText());
-			}
-			else if(msg_pwdChangeError.isDisplayed())
-			{
-				System.out.println(msg_pwdChangeError.getText());
-			}
-			else
-			{System.out.println("*********Unexpected exception on previous function***********");}
-			menu_changePassword.click();
-			
+			btn_Save.click();
+			this.verifySuccessMsg();
 		}
+	}
+
+	public void verifySuccessMsg() throws Throwable 
+	{
+		if (msg_pwdChangeSuccess.isDisplayed()) 
+		{
+			System.out.println(msg_pwdChangeSuccess.getText());
+		}
+
+		else if (msg_invalidFormatPass.isDisplayed())
+		{
+			System.out.println(msg_invalidFormatPass.getText());
+		} else if (msg_compareValidator.isDisplayed()) 
+		{
+			System.out.println(msg_compareValidator.getText());
+		} else if (msg_pwdChangeError.isDisplayed()) 
+		{
+			System.out.println(msg_pwdChangeError.getText());
+		} else {
+			System.out.println("*********Unexpected exception on previous function***********");
+		}
+		menu_changePassword.click();
+
+	}
 }
