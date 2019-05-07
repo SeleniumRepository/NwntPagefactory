@@ -28,21 +28,20 @@ public class UploadPrescriptionTest extends Testbase
 	{
 		initialization();
 		loginPage = new LoginPage();
-		homePage = new HomePage();
 		uploadPrescriptionsPage = new UploadPrescriptionsPage();
 		uploadPrescriptionsPage = (loginPage.login()).clickBtnUploadPrescriptions();
-		Assert.assertEquals(driver.getCurrentUrl().contains("UploadPrescription"), true, "You are not landed on Upload Prescription page.");
+		//Assert.assertEquals(driver.getCurrentUrl().contains("UploadPrescription"), true, "You are not landed on Upload Prescription page.");
 	}
 	
 	@DataProvider
-	public Object[][] getUploadLabReportTestData() throws Throwable
+	public Object[][] getUploadLabReportData() throws Throwable
 	{
 		Object[][] data = TestUtil.getTestData(prop.getProperty("uploadLabReportsFile"), prop.getProperty("uploadLabReportsSheet"));
 		return data;
 	}
 	
 	
-	@Test(dataProvider="getUploadLabReportTestData")
+	@Test(dataProvider="getUploadLabReportData")
 	public void uploadLabReport(String reportName, String reportDate, String reportfilePath)
 	{
 		uploadPrescriptionsPage.selectLabReportType(reportName);
@@ -51,18 +50,37 @@ public class UploadPrescriptionTest extends Testbase
 		//uploadPrescriptionsPage.clickFileUploadBtn();
 	}
 	
-	/*@Test
-	public void add_saveInvestigation()
+	@DataProvider
+	public Object[][] getAddInvestigationData() throws Throwable
 	{
-		uploadPrescriptionsPage.addInvestigation();
-		uploadPrescriptionsPage.clickBtnSaveInvestigation();
+		Object[][] data = TestUtil.getTestData(prop.getProperty("uploadLabReportsFile"), prop.getProperty("addInvestigationSheet"));
+		return data;
 	}
 	
-	@Test
-	public void Revise_adjustMedicines()
+	@Test(dataProvider="getAddInvestigationData")
+	public void add_saveInvestigation(String givenInvestigation, String patientValue, String givenDate)
 	{
-		uploadPrescriptionsPage.addRevisedMedicine();
-	}*/
+		uploadPrescriptionsPage.selectInvestigation(givenInvestigation);
+		uploadPrescriptionsPage.inputPatientValue(patientValue);
+		uploadPrescriptionsPage.inputInvestDate(givenDate);
+		//uploadPrescriptionsPage.clickBtnAddInvestigation();
+		//uploadPrescriptionsPage.clickBtnSaveInvestigation();
+	}
+	
+	@DataProvider
+	public Object[][] getRevisedMedicine() throws Throwable
+	{
+		Object[][] data = TestUtil.getTestData(prop.getProperty("uploadLabReportsFile"), prop.getProperty("addComplaintsSheet"));
+		return data;
+	}
+	
+	@Test(dataProvider="getRevisedMedicine")
+	public void Revise_adjustMedicines(String givenComplaint, String revisedMedicine)
+	{
+		uploadPrescriptionsPage.inputComplaint(givenComplaint);
+		uploadPrescriptionsPage.inputRevisedMedicine(revisedMedicine);
+		//uploadPrescriptionsPage.clickBtnAddcompalint();
+	}
 	
 	@AfterMethod
 	public void teardown()

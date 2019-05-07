@@ -109,8 +109,8 @@ public class UploadPrescriptionsPage extends Testbase
 	public void selectLabReportType(String reportCatg)
 	{
 		Select lr = new Select(ddlInvestigationCategory);
-		lr.selectByVisibleText(reportCatg);
 		//jse.executeScript("arguments[0].scrollIntoView(true);", reportCatg);
+		lr.selectByVisibleText(reportCatg);
 	}
 	
 	//Select given date (in dd-mmm-yyyy format) from Calender control
@@ -175,7 +175,7 @@ public class UploadPrescriptionsPage extends Testbase
 	}
 	
 	//click to add the investigation
-	public void clickBtnAddDocEvalInvestigation()
+	public void clickBtnAddInvestigation()
 	{
 		btnAddDocEvalInvestigation.click();
 	}
@@ -191,7 +191,7 @@ public class UploadPrescriptionsPage extends Testbase
 		selectInvestigation("Haemoglobin");
 		inputPatientValue("14.34");
 		inputInvestDate("20-Apr-2019");
-		clickBtnAddDocEvalInvestigation();
+		clickBtnAddInvestigation();
 	}
 	
 	/*****Activities to add the Revised Medicine*****/

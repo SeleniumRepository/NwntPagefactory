@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -36,23 +40,35 @@ public class TestUtil extends Testbase
 		FileInputStream fis = new FileInputStream(file);
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheet(sheetName);
-		//System.out.println("Row: "+sheet.getLastRowNum()+"          Cell: "+sheet.getRow(0).getLastCellNum());
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		
 		for(int r=0; r<sheet.getLastRowNum(); r++)
 		{
 			for(int c=0; c<sheet.getRow(0).getLastCellNum(); c++)
 			{
-				//System.out.println(sheet.getRow(r).getCell(c).getStringCellValue()+"    Row: "+r+"     Cell: "+c);
-				cell=sheet.getRow(r).getCell(c);
+				cell=sheet.getRow(r+1).getCell(c);
 				if(cell.getCellTypeEnum()==CellType.STRING)
-					data[r][c] = sheet.getRow(r+1).getCell(c).getStringCellValue();
-				else if(cell.getCellTypeEnum()==CellType.NUMERIC)
-					//data[r][c] = String.valueOf(sheet.getRow(r+1).getCell(c).getNumericCellValue());
-					data[r][c] = sheet.getRow(r+1).getCell(c).getNumericCellValue();
-				/*else if(cell.getCellTypeEnum()==CellType.)
-					data[r][c] = sheet.getRow(r+1).getCell(c).get;
-				data[r][c] = sheet.getRow(r+1).getCell(c).getStringCellValue();*/ 		
+					data[r][c] = cell.getStringCellValue();
+				else if(cell.getCellTypeEnum()==CellType.NUMERIC||cell.getCellTypeEnum()==CellType.FORMULA)
+				{
+					String cellText = String.valueOf(cell.getNumericCellValue());
+					if (HSSFDateUtil.isCellDateFormatted(cell)) 
+					{
+						Date d=(Date) cell.getDateCellValue();
+						//double d = cell.getNumericCellValue();
+						Calendar cal = Calendar.getInstance();
+						//cal.setTime(HSSFDateUtil.getJavaDate(d));
+						cal.setTime(d);
+						String yearText = (String.valueOf(cal.get(Calendar.YEAR))).substring(0);
+						SimpleDateFormat Mon = new SimpleDateFormat("MMM");
+						// cellText = cal.get(Calendar.DAY_OF_MONTH)+"-"+cal.get(Calendar.MONTH)+1+"-"+cellText;
+						// Date date=(Date) cell.getDateCellValue();
+						cellText = cal.get(Calendar.DAY_OF_MONTH) + "-" + Mon.format((Date) cell.getDateCellValue()) +"-" + yearText;
+					}
+					data[r][c] = cellText;
+				}
+				else if(cell.getCellTypeEnum()==CellType.BLANK)
+					data[r][c] = " "; 		
 			}
 		}
 		workbook.close();

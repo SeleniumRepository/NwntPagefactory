@@ -5,7 +5,9 @@
     <classes>
       <class name="com.nwnt.qa.testcases.UploadPrescriptionTest">
         <methods>
-          <include name="uploadLabReport"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="uploadLabReport" invocation-numbers="1 3"/>
         </methods>
       </class> <!-- com.nwnt.qa.testcases.UploadPrescriptionTest -->
     </classes>
