@@ -83,6 +83,8 @@ public class UserSOMDetailPage extends Testbase
 	//to check the Overall result click respective Overall result link
 	public SOMOverallResultPage clickOverallResult(String testDate) throws Throwable
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath= "_hplResult']";
 		for (int i=0,j=02; i<lblSOMTakenDate.size()&&j<lblSOMTakenDate.size()+02; i++,j++) 
 		{
@@ -98,6 +100,8 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 		return new SOMOverallResultPage();
 	}

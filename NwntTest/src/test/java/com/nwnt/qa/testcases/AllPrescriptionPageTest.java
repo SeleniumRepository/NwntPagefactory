@@ -6,13 +6,11 @@ import org.testng.annotations.Test;
 
 import com.nwnt.qa.base.Testbase;
 import com.nwnt.qa.pages.AllPrescriptionPage;
-import com.nwnt.qa.pages.HomePage;
 import com.nwnt.qa.pages.LoginPage;
 
 public class AllPrescriptionPageTest extends Testbase
 {
 	LoginPage loginPage;
-	HomePage homePage;
 	AllPrescriptionPage allPrescriptionPage;
 
 	public AllPrescriptionPageTest() throws Throwable 
@@ -25,9 +23,14 @@ public class AllPrescriptionPageTest extends Testbase
 	{
 		initialization();
 		loginPage = new LoginPage();
-		homePage = new HomePage();
 		allPrescriptionPage = new AllPrescriptionPage();
-		allPrescriptionPage = (loginPage.login()).clickBtnPrintPrescriptions();
+		allPrescriptionPage = loginPage.login().clickBtnPrintPrescriptions();
+	}
+	
+	@Test
+	public void getNumberofPrescription()
+	{
+		allPrescriptionPage.getPrescriptionsCount();
 	}
 	
 	@Test

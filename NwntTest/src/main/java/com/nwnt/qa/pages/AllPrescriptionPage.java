@@ -37,19 +37,19 @@ public class AllPrescriptionPage extends Testbase
 
 	//
 	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_LblRelationship']")
-	WebElement LblRelationship;
+	WebElement lblRelationship;
 
 	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_LblRegistartionDate']")
-	WebElement LblRegistartionDate;
+	WebElement lblRegistartionDate;
 
 	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_LblName']")
-	WebElement LblName;
+	WebElement lblName;
 
 	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_LblDOB']")
-	WebElement LblDOB;
+	WebElement lblDOB;
 
 	@FindBy(xpath = "//img[@id='ctl00_CenterAreaHolder_ImgPhoto']")
-	WebElement ImgPhoto;
+	WebElement imgPhoto;
 
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_grdUserAppointments']//tr")
 	List<WebElement> grdUserAppointments;
@@ -58,14 +58,20 @@ public class AllPrescriptionPage extends Testbase
 	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdUserAppointments']//span")
 	List<WebElement> lblAppointmentsTime;
 
-	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_grdUserAppointments_ctl02_imgBtnPrint']")
-	WebElement imgBtnPrescription;
+	//@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_grdUserAppointments_ctl02_imgBtnPrint']")
+	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdUserAppointments']//input")
+	List<WebElement> imgBtnPrescription;
 	
-	String before_xpath="//span[@id='ctl00_CenterAreaHolder_grdUserAppointments_ctl";
-	String after_xpath="_imgBtnPrint']";
+	//String before_xpath="//span[@id='ctl00_CenterAreaHolder_grdUserAppointments_ctl";
+	//String after_xpath="_imgBtnPrint']";
 	public AllPrescriptionPage() throws Throwable
 	{
 		PageFactory.initElements(driver, this);
+	}
+	
+	public void getPrescriptionsCount()
+	{
+		System.out.println("Total Generated prescriptions for "+lblName.getText()+" ("+lblRelationship.getText()+")  are : "+imgBtnPrescription.size());
 	}
 	
 	public PrintPrescriptionsPage openPrescriptionOf(String givenPresDate) throws Throwable

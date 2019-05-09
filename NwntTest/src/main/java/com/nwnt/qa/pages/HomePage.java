@@ -378,7 +378,6 @@ public class HomePage extends Testbase
 			if(existMain)
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
-				
 				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
@@ -387,17 +386,22 @@ public class HomePage extends Testbase
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						
 						String strBtnSOMtestId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "btnSomtest");
-						if(driver.findElement(By.id(strBtnSOMtestId)).isEnabled())
+						if(driver.findElement(By.id(strBtnSOMtestId)).isDisplayed())
 						driver.findElement(By.id(strBtnSOMtestId)).click();
-						
 						existMain=true;
 						break;
 					}
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
+					try
+					{
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
-					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					action.moveToElement(pageTab.get(p)).click().build().perform();
+					}catch(IndexOutOfBoundsException i)
+					{
+						i.getMessage();
+					}
 				}
 				else
 					break;
@@ -415,7 +419,6 @@ public class HomePage extends Testbase
 			if(existMain)
 			{break;}
 				List <WebElement> visitorsName = driver.findElements(By.xpath("//table[@class='tbl-data']/tbody/tr[not(contains(@class, 'tbl-footer'))]//a"));
-				
 				for(int i=0; i<visitorsName.size(); i++)
 				{
 					if(prop.getProperty("visitorname").equals(visitorsName.get(i).getText()) && visitorsName.get(i).isDisplayed()==true)
@@ -423,7 +426,8 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnAdvancePaymentId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "BtnAdvanceFee");
-						if(driver.findElement(By.id(strBtnAdvancePaymentId)).isEnabled())
+						//if(driver.findElement(By.id(strBtnAdvancePaymentId)).isEnabled())
+						if(driver.findElement(By.id(strBtnAdvancePaymentId)).isDisplayed())
 						driver.findElement(By.id(strBtnAdvancePaymentId)).click();
 						existMain=true;
 						break;
@@ -431,8 +435,12 @@ public class HomePage extends Testbase
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
-					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
-					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					try
+					{
+						js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
+						action.moveToElement(pageTab.get(p)).click().build().perform();
+					}catch(IndexOutOfBoundsException i)
+					{i.getMessage();}	
 				}
 				else
 					break;
@@ -466,8 +474,12 @@ public class HomePage extends Testbase
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
+					try
+					{
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
 					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					}catch(IndexOutOfBoundsException i)
+					{i.getMessage();}
 				}
 				else
 					break;
@@ -501,8 +513,11 @@ public class HomePage extends Testbase
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
+					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
 					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					}catch(IndexOutOfBoundsException i)
+					{i.getMessage();}
 				}
 				else
 					break;
@@ -536,8 +551,11 @@ public class HomePage extends Testbase
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
+					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
-					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					action.moveToElement(pageTab.get(p)).click().build().perform();
+					}catch(IndexOutOfBoundsException i)
+					{i.getMessage();}
 				}
 				else
 					break;
@@ -571,8 +589,11 @@ public class HomePage extends Testbase
 				}
 				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
 				{
+					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
-					action.moveToElement(pageTab.get(p)).click().build().perform();	
+					action.moveToElement(pageTab.get(p)).click().build().perform();
+					}catch(IndexOutOfBoundsException i)
+					{i.getMessage();}
 				}
 				else
 					break;

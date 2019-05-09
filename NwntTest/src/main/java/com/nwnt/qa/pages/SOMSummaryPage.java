@@ -1,5 +1,7 @@
 package com.nwnt.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,26 +10,41 @@ import com.nwnt.qa.base.Testbase;
 
 public class SOMSummaryPage extends Testbase
 {
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='Home']")
+	@FindBy(xpath="//a[text()= 'Home']")
 	WebElement menuHome;
 	
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='About Us']")
-	WebElement menuAboutUs;
+	@FindBy(xpath="//a[text()= 'Your Profile']")
+	WebElement menuYourProfile;
 	
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='Stress-o-meter']")
-	WebElement menuSOM;
+	@FindBy(xpath="//a[text()= 'Change Password']")
+	WebElement menuChangePassword;
 	
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='Media']")
-	WebElement menuMedia;
+	@FindBy(xpath="//a[text()= 'Appointments']")
+	WebElement menuAppointments;
 	
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='Behavioural Disorders']")
-	WebElement menuBehaviouralDisorders;
+	@FindBy(xpath="//a[text()= 'Logout']")
+	WebElement menuLogout;
 	
-	@FindBy(xpath="//ul[@id='UlTopNav']//a[text()='Contact']")
+	@FindBy(xpath="//a[@id='ctl00_LinkProfileName']")
 	WebElement menuContact;
 	
-	@FindBy(xpath="//div[@id='ctl00_LogoStyle']/a/img")
-	WebElement topLogo;
+	@FindBy(xpath="//img[@id='ctl00_Logo']")
+	WebElement logoImg;
+	
+	@FindBy(xpath="//a[@id='ctl00_CenterAreaHolder_btnSomTest']")
+	WebElement btnNewSOMTest;
+	
+	@FindBy(xpath="//a[@id='ctl00_CenterAreaHolder_LblSomRelationshipNo']")
+	WebElement lblSomRelationshipNo;
+	
+	@FindBy(xpath="//span[@id='ctl00_CenterAreaHolder_LblSomPatientName']")
+	WebElement lblSomPatientName;
+	
+	@FindBy(xpath="//span[@id='ctl00_CenterAreaHolder_LblSomAge']")
+	WebElement lblSomAge;
+	
+	@FindBy(xpath="//table[@id='ctl00_CenterAreaHolder_grdStressResult']//td[@class='modifiedCell']")
+	List<WebElement> lblSomDate;
 	
 	public SOMSummaryPage() throws Throwable 
 	{

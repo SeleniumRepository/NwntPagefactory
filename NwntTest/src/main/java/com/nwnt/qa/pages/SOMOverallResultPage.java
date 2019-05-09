@@ -3,7 +3,9 @@ package com.nwnt.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
+import com.google.common.base.Verify;
 import com.nwnt.qa.base.Testbase;
 
 public class SOMOverallResultPage extends Testbase
@@ -29,11 +31,18 @@ public class SOMOverallResultPage extends Testbase
 	@FindBy(xpath="//div[@id='ctl00_LogoStyle']/a/img")
 	WebElement logoImg;
 	
+	@FindBy(xpath="//span[@id='ctl00_ContentPlaceHolder1_ResultCaptionLabel']")
+	WebElement lblResultCaption;
+	
 
 	public SOMOverallResultPage() throws Throwable 
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void checkLandingPage()
+	{
+		Assert.assertTrue(lblResultCaption.getText().contains("Your Result"), "Oppps!!!! User is not landed on Overall Result Page.");
+	}
 	
 }

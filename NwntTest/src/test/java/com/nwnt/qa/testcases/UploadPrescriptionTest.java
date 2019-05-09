@@ -1,5 +1,6 @@
 package com.nwnt.qa.testcases;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,7 +31,8 @@ public class UploadPrescriptionTest extends Testbase
 		loginPage = new LoginPage();
 		uploadPrescriptionsPage = new UploadPrescriptionsPage();
 		uploadPrescriptionsPage = (loginPage.login()).clickBtnUploadPrescriptions();
-		//Assert.assertEquals(driver.getCurrentUrl().contains("UploadPrescription"), true, "You are not landed on Upload Prescription page.");
+		explicitWait.until(ExpectedConditions.urlContains("UploadPrescription"));
+		Assert.assertEquals(driver.getCurrentUrl().contains("UploadPrescription"), true, "You are not landed on Upload Prescription page.");
 	}
 	
 	@DataProvider
@@ -39,7 +41,6 @@ public class UploadPrescriptionTest extends Testbase
 		Object[][] data = TestUtil.getTestData(prop.getProperty("uploadLabReportsFile"), prop.getProperty("uploadLabReportsSheet"));
 		return data;
 	}
-	
 	
 	@Test(dataProvider="getUploadLabReportData")
 	public void uploadLabReport(String reportName, String reportDate, String reportfilePath)

@@ -37,35 +37,39 @@ public class AdvancePaymentsPage  extends Testbase
 
 	// to locate the Payment mode radio button list
 	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_RBLPaymentMode']//td")
-	List<WebElement> RBLPaymentMode;
+	List<WebElement> rblPaymentMode;
 
 	//to locate the textbox "Cash Amount"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtCashAmount']")
-	WebElement TxtCashAmount;
+	WebElement txtCashAmount;
 
 	//to locate the textbox "Payment Date"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtPaymentDate']")
-	WebElement TxtPaymentDate;
+	WebElement txtPaymentDate;
 
 	//to locate the textbox "Discount Amount"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_txtDiscountAmount']")
-	WebElement txtDiscountAmount;
+	WebElement txtDiscount;
 
 	//to locate the radio button list "Discount Type"
-	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_rblDiscountType']//td")
+	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblDiscountType']//input")
 	List<WebElement> rblDiscountType;
+	
+	//to locate the radio button list "Discount Type" labels
+	@FindBy(xpath = "//table[@id='ctl00_CenterAreaHolder_rblDiscountType']//label")
+	List<WebElement> rblDiscountTypeLbl;
 
 	//to locate the Dropdownlist "Payment for"
-	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_ddlpaymentfor']")
-	WebElement ddlpaymentfor;
+	@FindBy(xpath = "//select[@id='ctl00_CenterAreaHolder_ddlpaymentfor']")
+	WebElement ddlPaymentfor;
 
 	//to locate the button "Submit"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_btnsubmit']")
-	WebElement btnsubmit;
+	WebElement btnSubmit;
 
 	//to locate the button "Cancel"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_btncancel']")
-	WebElement btncancel;
+	WebElement btnCancel;
 
 	//to locate the label "Note"
 	@FindBy(xpath = "//span[@id='ctl00_CenterAreaHolder_lblNote']")
@@ -73,27 +77,27 @@ public class AdvancePaymentsPage  extends Testbase
 
 	//to locate the textbox "Full Name"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtFullName']")
-	WebElement TxtFullName;
+	WebElement txtFullName;
 
 	//to locate the textbox "Relationship No"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtRelationshipNo']")
-	WebElement TxtRelationshipNo;
+	WebElement txtRelationshipNo;
 
 	//to locate the textbox "Mobile No"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtMobileNo']")
-	WebElement TxtMobileNo;
+	WebElement txtMobileNo;
 
 	//to locate the textbox "Gender"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtGender']")
-	WebElement TxtGender;
+	WebElement txtGender;
 
 	//to locate the textbox "EmailId"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtEmailId']")
-	WebElement TxtEmailId;
+	WebElement txtEmailId;
 
 	//to locate the textbox "Account Balance"
 	@FindBy(xpath = "//input[@id='ctl00_CenterAreaHolder_TxtAccountBalance']")
-	WebElement TxtAccountBalance;
+	WebElement txtAccountBalance;
 	
 	public AdvancePaymentsPage() throws Throwable
 	{
@@ -105,45 +109,58 @@ public class AdvancePaymentsPage  extends Testbase
 		return logoImage_lnk.isDisplayed();
 	}
 	
-	//return the value for Payment Mode RBL 
-	public String selectPaymentmode(String payMode) 
+	//to get the value for Payment Mode RBL 
+	public void selectPaymentmode(String payMode) 
 	{
-		String pay = null;
-		for (int i = 0; i < RBLPaymentMode.size(); i++) {
-			if (payMode.equals(RBLPaymentMode.get(i).getText())) 
+		for (int i = 0; i < rblPaymentMode.size(); i++) {
+			if (payMode.equals(rblPaymentMode.get(i).getText())) 
 			{
-				RBLPaymentMode.get(i).click();
-				pay = RBLPaymentMode.get(i).getText();
+				rblPaymentMode.get(i).click();
 				break;
 			}
 		}
-		return pay;
+	}
+	
+	public void inputAmount(String amount)
+	{
+		txtCashAmount.sendKeys(amount);
+	}
+	
+	public void inputDiscount(String discount)
+	{
+		txtDiscount.sendKeys(discount);
 	}
 	
 	//return the value for Discount Type RBL
-	public String selectDiscountType(String discType)
+	public void selectDiscountType(String discType)
 	{
-		String type = null;
 		for (int i = 0; i < rblDiscountType.size(); i++) {
-			if (discType.equals(rblDiscountType.get(i).getText())) {
+			if (discType.equals(rblDiscountTypeLbl.get(i).getText()))
+			{
 				rblDiscountType.get(i).click();
-				type = rblDiscountType.get(i).getText();
 				break;
 			}
 		}
-		return type;
 	}
 	
 	public void selectPaymentFor(String payFor)
 	{
-		Select payf = new Select(ddlpaymentfor);
+		Select payf = new Select(ddlPaymentfor);
 		payf.selectByVisibleText(payFor);
 	}
 	
-	
-	public void depositAmount(String paymentMode)
+	public void clickSubmitOrCancel(String btnCommand)
 	{
-		
+		if (btnCommand.equals(btnSubmit.getText().trim()))
+			btnSubmit.click();
+		else if(btnCommand.equals(btnCancel.getText().trim()))
+			btnCancel.click();
+		else
+			System.out.println("Given command is not valid.");
 	}
 	
+	public String getVisitorName()
+	{
+		return txtFullName.getAttribute("value");
+	}
 }
