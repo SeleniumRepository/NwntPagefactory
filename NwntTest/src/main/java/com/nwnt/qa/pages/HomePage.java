@@ -42,10 +42,10 @@ public class HomePage extends Testbase
 	WebElement searchBy_DD;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_TextBoxSearchedValue")
-	WebElement searchValue;
+	WebElement txtSearchValue;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_TxtStartDate") 
-	WebElement startDate;
+	WebElement txtStartDate;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_CalExtSatrtDate_popupDiv")
 	WebElement startDate_popup;
@@ -60,25 +60,25 @@ public class HomePage extends Testbase
 	WebElement cal_title;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_TxtEnddate")
-	WebElement endDate;
+	WebElement txtEndDate;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_ClearSearchCriteriaButton")
-	WebElement Btn_clearSearchCriteria;
+	WebElement btnClearSearchCriteria;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_BtnSearch")
-	WebElement Btn_search;
+	WebElement btnSearch;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_BtnAddNewVisitor")
-	WebElement Btn_AddNewVisitor;
+	WebElement btnAddNewVisitor;
 	
 	@FindBy(id="ctl00_CenterAreaHolder_lblTotalRecord")
-	WebElement lbl_TotalRecordsCount;
+	WebElement lblTotalRecordsCount;
 	
 	@FindBy(xpath="//div[@class='btmmnus']//td")
-	WebElement lbl_copyrightText;
+	WebElement lblCopyrightText;
 	
 	@FindBy(xpath="//a//parent::td//ancestor::tr[@class='tbl-footer']")
-	WebElement btn_pageNo;
+	WebElement btnPageNo;
 	
 	
 	int cal_year;
@@ -131,57 +131,59 @@ public class HomePage extends Testbase
 	}
 	
 	//select value from dropdown
-	public void selectSearchcriteria(String value)
+	public void selectSearchCriteria(String searchBy, String criteria)
 	{ 
 		Select selectValue = new Select(searchBy_DD);
-		selectValue.selectByVisibleText(value);
-		if(value.contains("Age"))//||value.contains("Apollo ID")||value.contains("First Name")||value.contains("Email")||value.contains("Mobile Number")||value.contains("Registration Number")||value.contains("UID Number"))
+		selectValue.selectByVisibleText(searchBy);
+		String selectedValue = selectValue.getFirstSelectedOption().getText();
+		if(searchBy.trim().equals(selectedValue))//||value.contains("Apollo ID")||value.contains("First Name")||value.contains("Email")||value.contains("Mobile Number")||value.contains("Registration Number")||value.contains("UID Number"))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("35");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("Apollo ID"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("22222");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("First Name"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("Amritesh");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("Email"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("amriteshatwork@gmail.com");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("Mobile Number"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("1234567890");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("Registration Number"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("NWNT036262");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("UID Number"))
+		else if(searchBy.trim().equals(selectedValue))
 		{
-			searchValue.clear();
-			searchValue.sendKeys("33333");
+			txtSearchValue.clear();
+			txtSearchValue.sendKeys(criteria);
 		}
-		else if(value.contains("Registration Date"))
+		/*else if(searchBy.trim().equals("Registration Date"))
 		{
 			//Select start date from calender popup
-			startDate.click();
+			txtStartDate.click();
 			selectGivenDate("21-Jan-2019");
 			
 			//Select end date from calender popup
-			endDate.click();
+			txtEndDate.click();
 			selectGivenDate("11-Feb-2019");
-		}
-		else if(value.contains("Like Web Review"))
-		Btn_search.click();
+		}*/
+		else if(searchBy.trim().equals(selectedValue))
+		btnSearch.click();
+		btnSearch.click();
 	}
 	
 	//check the visitor profile
@@ -305,7 +307,7 @@ public class HomePage extends Testbase
 				while(given_year!=cal_year);    
 			}*/
 		
-		else if(!selected_month.equals(given_month))//selected_month!=given_month
+		else if(!selected_month.equals(given_month))
 		{
 			List<WebElement> all_months = driver.findElements(By.xpath("//tbody[@id='ctl00_CenterAreaHolder_CalExtSatrtDate_monthsBody']//div[@class='ajax__calendar_month']"));
 			for(int i=0;i<all_months.size();i++)
@@ -351,7 +353,7 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strAssignAppointmentId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "BtnFutureAppointment");
-						if(driver.findElement(By.id(strAssignAppointmentId)).isEnabled())
+						if(driver.findElement(By.id(strAssignAppointmentId)).isDisplayed())
 						driver.findElement(By.id(strAssignAppointmentId)).click();
 						existMain=true;
 						break;
@@ -426,14 +428,13 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnAdvancePaymentId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "BtnAdvanceFee");
-						//if(driver.findElement(By.id(strBtnAdvancePaymentId)).isEnabled())
 						if(driver.findElement(By.id(strBtnAdvancePaymentId)).isDisplayed())
 						driver.findElement(By.id(strBtnAdvancePaymentId)).click();
 						existMain=true;
 						break;
 					}
 				}
-				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
+				if(existMain!=true) 
 				{
 					try
 					{
@@ -466,13 +467,13 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnPrintPrescriptionId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "BtnPrint");
-						if(driver.findElement(By.id(strBtnPrintPrescriptionId)).isEnabled())
+						if(driver.findElement(By.id(strBtnPrintPrescriptionId)).isDisplayed())
 						driver.findElement(By.id(strBtnPrintPrescriptionId)).click();
 						existMain=true;
 						break;
 					}
 				}
-				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
+				if(existMain!=true) 
 				{
 					try
 					{
@@ -505,13 +506,13 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnPrintPreviousReceiptsId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "btnAccounts");
-						if(driver.findElement(By.id(strBtnPrintPreviousReceiptsId)).isEnabled())
+						if(driver.findElement(By.id(strBtnPrintPreviousReceiptsId)).isDisplayed())
 						driver.findElement(By.id(strBtnPrintPreviousReceiptsId)).click();
 						existMain=true;
 						break;
 					}
 				}
-				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
+				if(existMain!=true) 
 				{
 					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
@@ -543,13 +544,13 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnViewOpenAppointmentsId = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "btnOpenAppointments");
-						if(driver.findElement(By.id(strBtnViewOpenAppointmentsId)).isEnabled())
+						if(driver.findElement(By.id(strBtnViewOpenAppointmentsId)).isDisplayed())
 						driver.findElement(By.id(strBtnViewOpenAppointmentsId)).click();
 						existMain=true;
 						break;
 					}
 				}
-				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
+				if(existMain!=true) 
 				{
 					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));
@@ -581,13 +582,13 @@ public class HomePage extends Testbase
 						js.executeScript("arguments[0].scrollIntoView();", visitorsName.get(i));
 						String fullNameId = visitorsName.get(i).getAttribute("id");
 						String strBtnUploadPrescriptions = fullNameId.replace(fullNameId.substring(fullNameId.lastIndexOf("_")+1), "btnUploadReport");
-						if(driver.findElement(By.id(strBtnUploadPrescriptions)).isEnabled())
+						if(driver.findElement(By.id(strBtnUploadPrescriptions)).isDisplayed())
 						driver.findElement(By.id(strBtnUploadPrescriptions)).click();
 						existMain=true;
 						break;
 					}
 				}
-				if(existMain!=true)//(pageTab.get(p).getTagName()).equalsIgnoreCase("a")&& 
+				if(existMain!=true) 
 				{
 					try {
 					js.executeScript("arguments[0].scrollIntoView();", pageTab.get(p));

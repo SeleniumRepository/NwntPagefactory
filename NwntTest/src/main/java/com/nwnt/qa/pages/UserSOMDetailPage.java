@@ -109,6 +109,8 @@ public class UserSOMDetailPage extends Testbase
 	//to check the Nature result click respective Nature result link 
 	public void clickNatureResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_NatureLabel']";
 		for (int i=0, j=2; i<lblSOMTakenDate.size()&&j<lblSOMTakenDate.size()+2; i++,j++) 
 		{
@@ -124,12 +126,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Circumstance result click respective Circumstance result link
 	public void clickCircumsatncesResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_CircumsatncesLabel']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -145,12 +151,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Body&Mind result click respective Body&Mind result link 
 	public void clickBodyAndMindResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_BodyAndMindLabel']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -166,12 +176,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Home Life result click respective Home Life result link
 	public void clickHomeLifeResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_HomeLifeLabel']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -187,12 +201,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Work result click respective work result link
 	public void clickWorkResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_WorkLabel']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -208,12 +226,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Questionnaire with option selection, click respective View link
 	public void clickQuestionnaireResult(String testDate)
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_QuestionnaireLink']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -229,12 +251,16 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 	}
 	
 	//to check the Questionnaire summary with selected option, click respective Summary link
 	public SOMSummaryPage clickSummaryResult(String testDate) throws Throwable
 	{
+		if(lblSOMTakenDate.size()<=0)
+			System.out.println("Yet, user didn't take any test.");
 		String after_xpath = "_SummaryLink']";
 		for (int i=0,j=2; i<lblSOMTakenDate.size()&&j<2+lblSOMTakenDate.size(); i++,j++) 
 		{
@@ -250,6 +276,8 @@ public class UserSOMDetailPage extends Testbase
 				}
 				break;
 			}
+			else
+				System.out.println("There is no taken SOM for given Date Criteria.");
 		}
 		return new SOMSummaryPage();
 	}

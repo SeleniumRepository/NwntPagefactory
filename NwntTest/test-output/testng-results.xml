@@ -1,25 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29697" started-at="2019-05-09T11:42:02Z" finished-at="2019-05-09T11:42:32Z">
+  <suite name="Default suite" duration-ms="381221" started-at="2019-05-10T10:20:55Z" finished-at="2019-05-10T10:27:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29697" started-at="2019-05-09T11:42:02Z" finished-at="2019-05-09T11:42:32Z">
-      <class name="com.nwnt.qa.testcases.UserSOMDetailTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.UserSOMDetailTest@26be92ad]" name="setup" is-config="true" duration-ms="8811" started-at="2019-05-09T17:12:02Z" finished-at="2019-05-09T17:12:11Z">
+    <test name="Default test" duration-ms="381221" started-at="2019-05-10T10:20:55Z" finished-at="2019-05-10T10:27:16Z">
+      <class name="com.nwnt.qa.testcases.HomePageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="7683" started-at="2019-05-10T15:52:49Z" finished-at="2019-05-10T15:52:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="viewOverallResultTest()[pri:0, instance:com.nwnt.qa.testcases.UserSOMDetailTest@26be92ad]" name="viewOverallResultTest" duration-ms="20040" started-at="2019-05-09T17:12:11Z" finished-at="2019-05-09T17:12:31Z">
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="157459" started-at="2019-05-10T15:52:57Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Age]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- viewOverallResultTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.UserSOMDetailTest@26be92ad]" name="teardown" is-config="true" duration-ms="834" started-at="2019-05-09T17:12:31Z" finished-at="2019-05-09T17:12:32Z">
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="538" started-at="2019-05-10T15:55:34Z" finished-at="2019-05-10T15:55:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.nwnt.qa.testcases.UserSOMDetailTest -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6650" started-at="2019-05-10T15:55:35Z" finished-at="2019-05-10T15:55:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="1626" started-at="2019-05-10T15:55:41Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Apollo ID]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[55555]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="932" started-at="2019-05-10T15:55:43Z" finished-at="2019-05-10T15:55:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6635" started-at="2019-05-10T15:55:44Z" finished-at="2019-05-10T15:55:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="3956" started-at="2019-05-10T15:55:50Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[amriteshatwork@gmail.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="945" started-at="2019-05-10T15:55:54Z" finished-at="2019-05-10T15:55:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6713" started-at="2019-05-10T15:55:55Z" finished-at="2019-05-10T15:56:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="3109" started-at="2019-05-10T15:56:02Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[First Name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Amritesh]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="937" started-at="2019-05-10T15:56:05Z" finished-at="2019-05-10T15:56:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6481" started-at="2019-05-10T15:56:06Z" finished-at="2019-05-10T15:56:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="7739" started-at="2019-05-10T15:56:13Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mobile Number]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2147483647]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="1303" started-at="2019-05-10T15:56:20Z" finished-at="2019-05-10T15:56:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6625" started-at="2019-05-10T15:56:22Z" finished-at="2019-05-10T15:56:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="28576" started-at="2019-05-10T15:56:28Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Relationship Number]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NWNT036262]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="850" started-at="2019-05-10T15:56:57Z" finished-at="2019-05-10T15:56:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6557" started-at="2019-05-10T15:56:58Z" finished-at="2019-05-10T15:57:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="11011" started-at="2019-05-10T15:57:04Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:57:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UID Number]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[33333]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAgainstCriteria -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="950" started-at="2019-05-10T15:57:15Z" finished-at="2019-05-10T15:57:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

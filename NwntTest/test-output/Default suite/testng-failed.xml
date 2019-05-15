@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.nwnt.qa.testcases.UserSOMDetailTest">
+      <class name="com.nwnt.qa.testcases.HomePageTest">
         <methods>
           <include name="setup"/>
-          <include name="viewOverallResultTest"/>
+          <include name="teardown"/>
+          <include name="searchAgainstCriteria" invocation-numbers="5 6"/>
         </methods>
-      </class> <!-- com.nwnt.qa.testcases.UserSOMDetailTest -->
+      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

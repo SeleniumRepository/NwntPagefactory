@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.nwnt.qa.base.Testbase;
@@ -15,6 +16,7 @@ import com.nwnt.qa.pages.LoginPage;
 import com.nwnt.qa.pages.LogoutPage;
 import com.nwnt.qa.pages.YourProfilePage;
 import com.nwnt.qa.util.CaptureScreen;
+import com.nwnt.qa.util.TestUtil;
 
 public class HomePageTest extends Testbase
 {
@@ -44,7 +46,7 @@ public class HomePageTest extends Testbase
 		captureScreen = new CaptureScreen();
 		homePage=loginPage.login();
 	}
-	
+	/*
 	@Test(priority=1)
 	public void homePageTitleTest() throws IOException
 	{
@@ -134,6 +136,19 @@ public class HomePageTest extends Testbase
 	{
 		homePage.clickBtnUploadPrescriptions();
  		captureScreen.takeScreenSnap();
+	}
+	*/
+	@DataProvider
+	public Object[][] getSearchCriteriaTestData() throws Throwable
+	{
+		Object[][] data= TestUtil.getTestData(prop.getProperty("searchCriteriaTestFile"), prop.getProperty("searchCriteriaSheet"));
+		return data;
+	}
+	
+	@Test(dataProvider="getSearchCriteriaTestData")
+	public void searchAgainstCriteria(String searchBy, String criteria)
+	{
+		homePage.selectSearchCriteria(searchBy, criteria);
 	}
 		
 	@AfterMethod

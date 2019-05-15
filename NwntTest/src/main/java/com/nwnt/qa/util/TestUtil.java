@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -12,6 +13,7 @@ import java.util.Date;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -51,8 +53,8 @@ public class TestUtil extends Testbase
 					data[r][c] = cell.getStringCellValue();
 				else if(cell.getCellTypeEnum()==CellType.NUMERIC||cell.getCellTypeEnum()==CellType.FORMULA)
 				{
-					String cellText = String.valueOf(cell.getNumericCellValue());
-					if (HSSFDateUtil.isCellDateFormatted(cell)) 
+					String cellText = String.valueOf((long) cell.getNumericCellValue());
+					if (HSSFDateUtil.isCellDateFormatted(cell))
 					{
 						Date d=(Date) cell.getDateCellValue();
 						//double d = cell.getNumericCellValue();
