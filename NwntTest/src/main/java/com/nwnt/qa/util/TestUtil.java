@@ -2,23 +2,15 @@ package com.nwnt.qa.util;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.nwnt.qa.base.Testbase;
@@ -49,9 +41,11 @@ public class TestUtil extends Testbase
 			for(int c=0; c<sheet.getRow(0).getLastCellNum(); c++)
 			{
 				cell=sheet.getRow(r+1).getCell(c);
-				if(cell.getCellTypeEnum()==CellType.STRING)
+				if(cell.getCellType()==CellType.STRING)
+				//if(cell.getCellTypeEnum()==CellType.STRING)
 					data[r][c] = cell.getStringCellValue();
-				else if(cell.getCellTypeEnum()==CellType.NUMERIC||cell.getCellTypeEnum()==CellType.FORMULA)
+				else if(cell.getCellType()==CellType.NUMERIC||cell.getCellType()==CellType.FORMULA)
+					//else if(cell.getCellTypeEnum()==CellType.NUMERIC||cell.getCellTypeEnum()==CellType.FORMULA)
 				{
 					String cellText = String.valueOf((long) cell.getNumericCellValue());
 					if (HSSFDateUtil.isCellDateFormatted(cell))
@@ -69,7 +63,8 @@ public class TestUtil extends Testbase
 					}
 					data[r][c] = cellText;
 				}
-				else if(cell.getCellTypeEnum()==CellType.BLANK)
+				else if(cell.getCellType()==CellType.BLANK)
+				//else if(cell.getCellTypeEnum()==CellType.BLANK)
 					data[r][c] = " "; 		
 			}
 		}

@@ -1,6 +1,5 @@
 package com.nwnt.qa.testcases;
 
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -30,6 +29,7 @@ public class AdvancePaymentPageTest extends Testbase
 		loginPage = new LoginPage();
 		homePage = new HomePage();
 		advancePaymentsPage = new AdvancePaymentsPage();
+		System.out.println("*****Now, Executing the Advance Payments Test.*****");
 		advancePaymentsPage = loginPage.login().clickBtnAdvancePayments();
 	}
 	

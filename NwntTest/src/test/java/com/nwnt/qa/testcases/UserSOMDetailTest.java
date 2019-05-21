@@ -16,6 +16,8 @@ public class UserSOMDetailTest extends Testbase
 	UserSOMDetailPage userSOMDetailPage;
 	SOMOverallResultPage overallResultPage;
 	SOMSummaryPage somSummaryPage;
+	
+	String givendate = prop.getProperty("given_date");
 
 	public UserSOMDetailTest() throws Throwable 
 	{
@@ -30,15 +32,16 @@ public class UserSOMDetailTest extends Testbase
 		userSOMDetailPage = new UserSOMDetailPage();
 		overallResultPage = new SOMOverallResultPage();
 		somSummaryPage = new SOMSummaryPage();
+		System.out.println("*****Now, Executing the User SOM Detail Test.*****");
 		userSOMDetailPage = (loginPage.login()).clickBtnSOMtest();
 	}
 	
-	@Test(priority=1)
-	public void viewOverallResultTest() throws Throwable
+	@Test(priority=1, groups= {"Regression", "ViewSOMResult"})
+	public void viewOverallResult() throws Throwable
 	{
 		try 
 		{
-			overallResultPage=userSOMDetailPage.clickOverallResult("19-Apr-2019");
+			overallResultPage=userSOMDetailPage.clickOverallResultOf(givendate);
 		} 
 		catch (Exception e) 
 		{
@@ -46,34 +49,34 @@ public class UserSOMDetailTest extends Testbase
 		}
 	}
 	
-	@Test
-	public void viewNatureSelectedQuesTest()
+	@Test(groups= {"Regression", "ViewSOMResult"})
+	public void viewNatureSelectedQues()
 	{
-		userSOMDetailPage.clickNatureResult("19-Apr-2019");
+		userSOMDetailPage.clickNatureResultOf(givendate);
 	}
 	
-	@Test
-	public void viewCircumstancesSelectedQuesTest()
+	@Test(groups= {"Regression", "ViewSOMResult"})
+	public void viewCircumstancesSelectedQues()
 	{
-		userSOMDetailPage.clickCircumsatncesResult("19-Apr-2019");
+		userSOMDetailPage.clickCircumsatncesResultOf(givendate);
 	}
 	
-	@Test
-	public void viewBodyMindSelectedQuesTest()
+	@Test(groups= {"Regression", "ViewSOMResult"})
+	public void viewBodyMindSelectedQues()
 	{
-		userSOMDetailPage.clickBodyAndMindResult("19-Apr-2019");
+		userSOMDetailPage.clickBodyAndMindResultOf(givendate);
 	}
 	
-	@Test
-	public void viewHomeLifeSelectedQuesTest()
+	@Test(groups= {"Regression", "ViewSOMResult"})
+	public void viewHomeLifeSelectedQues()
 	{
-		userSOMDetailPage.clickHomeLifeResult("19-Apr-2019");
+		userSOMDetailPage.clickHomeLifeResultOf(givendate);
 	}
 	
-	@Test
-	public void viewWorkLifeSelectedQuesTest()
+	@Test(groups= {"Regression", "ViewSOMResult"})
+	public void viewWorkLifeSelectedQues()
 	{
-		userSOMDetailPage.clickWorkResult("19-Apr-2019");
+		userSOMDetailPage.clickWorkResultOf(givendate);
 	}
 	
 	/*@Test
@@ -82,11 +85,11 @@ public class UserSOMDetailTest extends Testbase
 		userSOMDetailPage.clickQuestionnaireResult("19-Apr-2019");
 	}*/
 	
-	@Test(priority=0)
-	public void viewSummaryResultTest()
+	@Test(priority=0, groups= {"Regression", "ViewSOMResult"})
+	public void viewSummaryResult()
 	{
 		try {
-			somSummaryPage=userSOMDetailPage.clickSummaryResult("19-Apr-2019");
+			somSummaryPage=userSOMDetailPage.clickSummaryResultOf(givendate);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

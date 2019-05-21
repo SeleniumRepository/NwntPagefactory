@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NWNThealthcare">
 	<test name = "NwntTest">
+	<!-- <groups>
+	<run>
+	<include name="Regression"/>
+	</run>
+	</groups> -->
 		<classes>
-			<class name = "com.nwnt.qa.testcases.LoginPageTest"/>
+			<!-- <class name = "com.nwnt.qa.testcases.LoginPageTest"/> -->
+			<class name = "com.nwnt.qa.testcases.HomePageTest"/>
+			<!-- <class name = "com.nwnt.qa.testcases.AssignAppointmentTest"/> -->
 		</classes>
 	</test>
 </suite>

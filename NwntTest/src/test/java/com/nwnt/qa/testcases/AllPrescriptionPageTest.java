@@ -24,16 +24,17 @@ public class AllPrescriptionPageTest extends Testbase
 		initialization();
 		loginPage = new LoginPage();
 		allPrescriptionPage = new AllPrescriptionPage();
+		System.out.println("*****Now, Executing the All Prescription Test.*****");
 		allPrescriptionPage = loginPage.login().clickBtnPrintPrescriptions();
 	}
 	
-	@Test
+	@Test(groups= {"Regression", "ViewPrescription"})
 	public void getNumberofPrescription()
 	{
 		allPrescriptionPage.getPrescriptionsCount();
 	}
 	
-	@Test
+	@Test(groups= {"Regression", "ViewPrescription"})
 	public void viewPrescription() throws Throwable
 	{
 		allPrescriptionPage.openPrescriptionOf("20-04-2019");

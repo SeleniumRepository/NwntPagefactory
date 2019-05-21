@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NWNThealthcare]">
+  <test name="NwntTest(failed)">
+    <groups>
+      <run>
+        <include name="Sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.nwnt.qa.testcases.HomePageTest">
+        <methods>
+          <include name="homePageTitleTest"/>
+          <include name="searchAgainstCriteria" invocation-numbers="0 1 2 3 4 5 6"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
+    </classes>
+  </test> <!-- NwntTest(failed) -->
+</suite> <!-- Failed suite [NWNThealthcare] -->

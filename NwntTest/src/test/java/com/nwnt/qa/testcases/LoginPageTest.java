@@ -31,16 +31,17 @@ public class LoginPageTest extends Testbase
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
+		System.out.println("*****Now, Executing the Login Page Test.*****");
 	}
 	
-	@Test
+	@Test(groups= {"Sanity", "Regression"})
 	public void loginPageTitleTest() throws InterruptedException
 	{
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Login");
 	}
 	
-	@Test
+	@Test(groups= {"Sanity", "Regression", "ViewSOMResult", "AssignAppointment", "ViewPrescription", "ViewReceipt"})
 	public void loginTest() throws Throwable
 	{
 		//homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NWNTHealthcare Regression Test]">
+  <test name="NwntTest(failed)">
+    <classes>
+      <class name="com.nwnt.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.LoginPageTest -->
+      <class name="com.nwnt.qa.testcases.PrintPreviousPayReceiptTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="printReceipt"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.PrintPreviousPayReceiptTest -->
+      <class name="com.nwnt.qa.testcases.PrintPrescriptionPageTest">
+        <methods>
+          <include name="sendPrescriptionMail"/>
+          <include name="setup"/>
+          <include name="PrintPrescription"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.PrintPrescriptionPageTest -->
+      <class name="com.nwnt.qa.testcases.AllPrescriptionPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.AllPrescriptionPageTest -->
+      <class name="com.nwnt.qa.testcases.ViewPreviousPayReceiptsTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.ViewPreviousPayReceiptsTest -->
+      <class name="com.nwnt.qa.testcases.UploadPrescriptionTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.UploadPrescriptionTest -->
+      <class name="com.nwnt.qa.testcases.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
+      <class name="com.nwnt.qa.testcases.UserSOMDetailTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.UserSOMDetailTest -->
+      <class name="com.nwnt.qa.testcases.AdvancePaymentPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.AdvancePaymentPageTest -->
+      <class name="com.nwnt.qa.testcases.AssignAppointmentTest">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.nwnt.qa.testcases.AssignAppointmentTest -->
+    </classes>
+  </test> <!-- NwntTest(failed) -->
+</suite> <!-- Failed suite [NWNTHealthcare Regression Test] -->

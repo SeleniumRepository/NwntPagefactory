@@ -81,7 +81,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Overall result click respective Overall result link
-	public SOMOverallResultPage clickOverallResult(String testDate) throws Throwable
+	public SOMOverallResultPage clickOverallResultOf(String testDate) throws Throwable
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -107,7 +107,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Nature result click respective Nature result link 
-	public void clickNatureResult(String testDate)
+	public void clickNatureResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -132,7 +132,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Circumstance result click respective Circumstance result link
-	public void clickCircumsatncesResult(String testDate)
+	public void clickCircumsatncesResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -157,7 +157,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Body&Mind result click respective Body&Mind result link 
-	public void clickBodyAndMindResult(String testDate)
+	public void clickBodyAndMindResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -182,7 +182,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Home Life result click respective Home Life result link
-	public void clickHomeLifeResult(String testDate)
+	public void clickHomeLifeResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -207,7 +207,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Work result click respective work result link
-	public void clickWorkResult(String testDate)
+	public void clickWorkResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -232,7 +232,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Questionnaire with option selection, click respective View link
-	public void clickQuestionnaireResult(String testDate)
+	public void clickQuestionnaireResultOf(String testDate)
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");
@@ -257,7 +257,7 @@ public class UserSOMDetailPage extends Testbase
 	}
 	
 	//to check the Questionnaire summary with selected option, click respective Summary link
-	public SOMSummaryPage clickSummaryResult(String testDate) throws Throwable
+	public SOMSummaryPage clickSummaryResultOf(String testDate) throws Throwable
 	{
 		if(lblSOMTakenDate.size()<=0)
 			System.out.println("Yet, user didn't take any test.");

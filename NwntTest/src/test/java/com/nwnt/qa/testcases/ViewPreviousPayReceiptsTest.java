@@ -13,7 +13,7 @@ public class ViewPreviousPayReceiptsTest extends Testbase
 {
 	LoginPage loginPage;
 	HomePage homePage;
-	ViewPreviousPayReceiptsPage printPreviousReceiptsPage;
+	ViewPreviousPayReceiptsPage viewPreviousPayReceiptsPage;
 	
 	public ViewPreviousPayReceiptsTest() throws Throwable 
 	{
@@ -26,15 +26,22 @@ public class ViewPreviousPayReceiptsTest extends Testbase
 		initialization();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
-		printPreviousReceiptsPage = new ViewPreviousPayReceiptsPage();
-		printPreviousReceiptsPage = (loginPage.login()).clickBtnPrintPreviousReceipts();
+		viewPreviousPayReceiptsPage = new ViewPreviousPayReceiptsPage();
+		System.out.println("*****Now, Executing the View Previous Pay Receipts Test.*****");
+		viewPreviousPayReceiptsPage = (loginPage.login()).clickBtnPrintPreviousReceipts();
 	}
 	
 	@Test
 	public void countViewReceipt() throws Throwable
 	{
-		printPreviousReceiptsPage.openPaymentReceiptOf("20-Apr-2019");
+		System.out.println("Total count of Payments Receipts are: "+ viewPreviousPayReceiptsPage.allReceipts());
 	}
+	
+	/*@Test
+	public void openReceipt() throws Throwable
+	{
+		viewPreviousPayReceiptsPage.openPaymentReceiptOf("11-May-2019");
+	}*/
 	
 	@AfterMethod
 	public void teardown()

@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.google.common.base.Verify;
 import com.nwnt.qa.base.Testbase;
 
 public class SOMOverallResultPage extends Testbase

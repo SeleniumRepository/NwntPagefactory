@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NWNTHealthcare Regression Test">
+<test name="NwntTest">
+<classes>
+<class name="com.nwnt.qa.testcases.LoginPageTest"/>
+<class name="com.nwnt.qa.testcases.HomePageTest"/>
+<class name="com.nwnt.qa.testcases.AssignAppointmentTest"/>
+<class name="com.nwnt.qa.testcases.UserSOMDetailTest"/>
+<class name="com.nwnt.qa.testcases.AdvancePaymentPageTest"/>
+<class name="com.nwnt.qa.testcases.AllPrescriptionPageTest"/>
+<class name="com.nwnt.qa.testcases.PrintPrescriptionPageTest"/>
+<class name="com.nwnt.qa.testcases.ViewPreviousPayReceiptsTest"/>
+<class name="com.nwnt.qa.testcases.PrintPreviousPayReceiptTest"/>
+<class name="com.nwnt.qa.testcases.UploadPrescriptionTest"/>
+<!-- <class name="com.nwnt.qa.testcases.YourProfilePageTest"/> -->
+</classes>
+</test>
+</suite>

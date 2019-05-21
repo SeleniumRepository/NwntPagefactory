@@ -31,6 +31,7 @@ public class UploadPrescriptionTest extends Testbase
 		loginPage = new LoginPage();
 		uploadPrescriptionsPage = new UploadPrescriptionsPage();
 		uploadPrescriptionsPage = (loginPage.login()).clickBtnUploadPrescriptions();
+		System.out.println("*****Now, Executing the Upload Prescripton Test.*****");
 		explicitWait.until(ExpectedConditions.urlContains("UploadPrescription"));
 		Assert.assertEquals(driver.getCurrentUrl().contains("UploadPrescription"), true, "You are not landed on Upload Prescription page.");
 	}

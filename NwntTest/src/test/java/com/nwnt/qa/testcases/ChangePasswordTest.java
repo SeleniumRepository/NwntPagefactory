@@ -11,7 +11,6 @@ import com.nwnt.qa.pages.HomePage;
 import com.nwnt.qa.pages.LoginPage;
 import com.nwnt.qa.pages.LogoutPage;
 import com.nwnt.qa.pages.YourProfilePage;
-import com.nwnt.qa.util.Xls_Reader;
 
 public class ChangePasswordTest extends Testbase
 {

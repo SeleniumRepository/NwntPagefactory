@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -51,11 +52,15 @@ public class PrintPrescriptionsPage extends Testbase
 	
 	public void switchToChildWindow()
 	{
+		try
+		{
 		Set<String> windowHandler = driver.getWindowHandles();
 		Iterator<String> it = windowHandler.iterator();
 		parentWindowId = it.next();
 		childWindowId = it.next();
 		driver.switchTo().window(childWindowId);
+		}catch(NoSuchElementException e)
+		{e.getMessage();}
 	}
 	
 	public void acceptAlert()

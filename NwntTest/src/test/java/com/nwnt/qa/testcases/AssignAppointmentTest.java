@@ -35,6 +35,7 @@ public class AssignAppointmentTest extends Testbase
 		loginPage = new LoginPage();
 		assignAppPage = new AssignAppointmentPage();
 		homePage = loginPage.login();
+		System.out.println("*****Now, Executing the Assign Appointment Test.*****");
 		assignAppPage = homePage.clickBtnAssignAppointment();
 		
 		//xlsReader = new Xls_Reader();
@@ -61,8 +62,8 @@ public class AssignAppointmentTest extends Testbase
 		
 	}
 	
-	@Test(dataProvider="getDrAppTestData")
-	public void assignDrAppointmentTest(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String PatientNotBrought, String IsCorporateVisitor)
+	@Test(dataProvider="getDrAppTestData", groups= {"Regression", "AssignAppointment"})
+	public void assignDrAppointment(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String PatientNotBrought, String IsCorporateVisitor)
 	{
 		System.out.println("AppointmentWith "+AppointmentWith+" ClinicLocation "+ClinicLocation+" AppointmentTo "+AppointmentTo+" CaseType "+CaseType+" AppointmentIn "+AppointmentIn+" PatientNotBrought "+PatientNotBrought+" IsCorporateVisitor "+IsCorporateVisitor);
 		assignAppPage.selectAppointmentWith(AppointmentWith);
@@ -89,7 +90,7 @@ public class AssignAppointmentTest extends Testbase
 	}
 	
 	@Test(dataProvider="getPnlAppTestData")
-	public void assignPnlAppointmentTest(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String IsCorporateVisitor)
+	public void assignPnlAppointment(String AppointmentWith, String ClinicLocation, String AppointmentTo, String CaseType, String AppointmentIn, String IsCorporateVisitor)
 	{
 		assignAppPage.selectAppointmentWith(AppointmentWith);
 		assignAppPage.selectClinicLocation(ClinicLocation);

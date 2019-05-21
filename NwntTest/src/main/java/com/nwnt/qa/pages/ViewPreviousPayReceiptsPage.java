@@ -75,6 +75,7 @@ public class ViewPreviousPayReceiptsPage extends Testbase
 		PageFactory.initElements(driver, this);
 	}
 	
+	// to open the specific date Receipt
 	public PrintPreviousPayReceiptPage openPaymentReceiptOf(String givenReceiptDate) throws Throwable
 	{
 		for(int i=0,j=2; i<btnReceiptsDate.size()&&j<2+btnReceiptsDate.size(); i++,j++)
@@ -94,6 +95,12 @@ public class ViewPreviousPayReceiptsPage extends Testbase
 			}
 		}
 		return new PrintPreviousPayReceiptPage();
+	}
+	
+	//to count the generated receipts 
+	public int allReceipts()
+	{
+		return btnReceiptsDate.size();
 	}
 
 }

@@ -1,7 +1,6 @@
 package com.nwnt.qa.testcases;
 
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,17 +31,22 @@ public class PrintPreviousPayReceiptTest extends Testbase
 		homePage = new HomePage();
 		viewPreviousPayReceiptsPage = new ViewPreviousPayReceiptsPage();
 		printPreviousPayReceiptPage = new PrintPreviousPayReceiptPage();
-		printPreviousPayReceiptPage = (loginPage.login()).clickBtnPrintPreviousReceipts().openPaymentReceiptOf("24-Apr-2019");
+		System.out.println("*****Now, Executing the Print Previous Pay Receipt Test.*****");
+		printPreviousPayReceiptPage = (loginPage.login()).clickBtnPrintPreviousReceipts().openPaymentReceiptOf("16-May-2019");
 	}
 	
 	@Test
 	public void printReceipt() throws Exception
 	{
+		try
+		{
 		Thread.sleep(2000);
 		printPreviousPayReceiptPage.closePrinterPage();
 		Thread.sleep(5000);
 		printPreviousPayReceiptPage.switchToChildWindow();
 		Thread.sleep(5000);
+		}catch(ElementNotVisibleException e)
+		{e.printStackTrace();}
 	}
 	
 	@AfterMethod

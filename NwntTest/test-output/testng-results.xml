@@ -1,181 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="381221" started-at="2019-05-10T10:20:55Z" finished-at="2019-05-10T10:27:16Z">
+  <suite name="Default suite" duration-ms="17332" started-at="2019-05-18T07:29:46Z" finished-at="2019-05-18T07:30:03Z">
     <groups>
+      <group name="Sanity">
+        <method signature="LoginPageTest.loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginPageTitleTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- Sanity -->
+      <group name="ViewSOMResult">
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- ViewSOMResult -->
+      <group name="Regression">
+        <method signature="LoginPageTest.loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginPageTitleTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- Regression -->
+      <group name="ViewReceipt">
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- ViewReceipt -->
+      <group name="AssignAppointment">
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- AssignAppointment -->
+      <group name="ViewPrescription">
+        <method signature="LoginPageTest.loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" class="com.nwnt.qa.testcases.LoginPageTest"/>
+      </group> <!-- ViewPrescription -->
     </groups>
-    <test name="Default test" duration-ms="381221" started-at="2019-05-10T10:20:55Z" finished-at="2019-05-10T10:27:16Z">
-      <class name="com.nwnt.qa.testcases.HomePageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="7683" started-at="2019-05-10T15:52:49Z" finished-at="2019-05-10T15:52:57Z">
+    <test name="Default test" duration-ms="17332" started-at="2019-05-18T07:29:46Z" finished-at="2019-05-18T07:30:03Z">
+      <class name="com.nwnt.qa.testcases.LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="setup" is-config="true" duration-ms="9270" started-at="2019-05-18T12:59:46Z" finished-at="2019-05-18T12:59:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="157459" started-at="2019-05-10T15:52:57Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:34Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Age]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[30]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginPageTitleTest" duration-ms="16" started-at="2019-05-18T12:59:55Z" finished-at="2019-05-18T12:59:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="538" started-at="2019-05-10T15:55:34Z" finished-at="2019-05-10T15:55:35Z">
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="tearDown" is-config="true" duration-ms="803" started-at="2019-05-18T12:59:55Z" finished-at="2019-05-18T12:59:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6650" started-at="2019-05-10T15:55:35Z" finished-at="2019-05-10T15:55:41Z">
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="setup" is-config="true" duration-ms="5164" started-at="2019-05-18T12:59:56Z" finished-at="2019-05-18T13:00:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="1626" started-at="2019-05-10T15:55:41Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Apollo ID]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[55555]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="loginTest" duration-ms="1098" started-at="2019-05-18T13:00:01Z" finished-at="2019-05-18T13:00:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="932" started-at="2019-05-10T15:55:43Z" finished-at="2019-05-10T15:55:44Z">
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.nwnt.qa.testcases.LoginPageTest@6767c1fc]" name="tearDown" is-config="true" duration-ms="952" started-at="2019-05-18T13:00:02Z" finished-at="2019-05-18T13:00:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6635" started-at="2019-05-10T15:55:44Z" finished-at="2019-05-10T15:55:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="3956" started-at="2019-05-10T15:55:50Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:55:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Email]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[amriteshatwork@gmail.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="945" started-at="2019-05-10T15:55:54Z" finished-at="2019-05-10T15:55:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6713" started-at="2019-05-10T15:55:55Z" finished-at="2019-05-10T15:56:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="3109" started-at="2019-05-10T15:56:02Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[First Name]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Amritesh]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="937" started-at="2019-05-10T15:56:05Z" finished-at="2019-05-10T15:56:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6481" started-at="2019-05-10T15:56:06Z" finished-at="2019-05-10T15:56:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="7739" started-at="2019-05-10T15:56:13Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Mobile Number]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2147483647]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="1303" started-at="2019-05-10T15:56:20Z" finished-at="2019-05-10T15:56:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6625" started-at="2019-05-10T15:56:22Z" finished-at="2019-05-10T15:56:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="28576" started-at="2019-05-10T15:56:28Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:56:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Relationship Number]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[NWNT036262]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="850" started-at="2019-05-10T15:56:57Z" finished-at="2019-05-10T15:56:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="setup" is-config="true" duration-ms="6557" started-at="2019-05-10T15:56:58Z" finished-at="2019-05-10T15:57:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchAgainstCriteria(java.lang.String, java.lang.String)[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="searchAgainstCriteria" duration-ms="11011" started-at="2019-05-10T15:57:04Z" data-provider="getSearchCriteriaTestData" finished-at="2019-05-10T15:57:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[UID Number]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[33333]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAgainstCriteria -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.nwnt.qa.testcases.HomePageTest@48e4374]" name="teardown" is-config="true" duration-ms="950" started-at="2019-05-10T15:57:15Z" finished-at="2019-05-10T15:57:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.nwnt.qa.testcases.HomePageTest -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nwnt.qa.testcases.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
